@@ -3,25 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>US-based PCB sourcing partner powered by Shengyi</title>
+    <title>Bridge PCB — Your One-Stop Shop for PCB &amp; PCBA Manufacturing</title>
     <meta
       name="description"
-      content="US-based PCB sourcing partner powered by Shengyi. PCB manufacturing coordination, QA, and logistics with fast US communication."
+      content="US-based PCB &amp; PCBA sourcing agent backed by leading manufacturers in China. From concept to creation — technical support, manufacturing coordination, QA, and logistics with fast US communication."
     />
-
-    <meta property="og:title" content="US-based PCB sourcing partner powered by Shengyi" />
-    <meta
-      property="og:description"
-      content="US-based PCB sourcing partner powered by Shengyi. PCB manufacturing coordination, QA, and logistics with fast US communication."
-    />
+    <meta property="og:title" content="Bridge PCB — Your One-Stop Shop for PCB &amp; PCBA Manufacturing" />
+    <meta property="og:description" content="US-based PCB &amp; PCBA sourcing agent backed by leading manufacturers in China. From concept to creation." />
     <meta property="og:type" content="website" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
 
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -29,409 +22,1005 @@
         theme: {
           extend: {
             fontFamily: { sans: ["Inter", "ui-sans-serif", "system-ui"] },
-            boxShadow: { soft: "0 12px 36px rgba(2,6,23,.10)" },
+            colors: {
+              brand: {
+                50: "#eff6ff", 100: "#dbeafe", 200: "#bfdbfe",
+                400: "#60a5fa", 500: "#3b82f6", 600: "#2563eb",
+                700: "#1d4ed8", 800: "#1e40af", 900: "#1e3a8a",
+              },
+            },
+            boxShadow: {
+              soft: "0 12px 36px rgba(2,6,23,.08)",
+              glow: "0 0 40px rgba(59,130,246,.25)",
+              "glow-sm": "0 0 20px rgba(59,130,246,.15)",
+            },
           },
         },
       };
     </script>
     <style>
-      html {
-        scroll-behavior: smooth;
+      html { scroll-behavior: smooth; }
+
+      .dot-grid {
+        background-image: radial-gradient(circle, rgba(59,130,246,0.10) 1px, transparent 1px);
+        background-size: 22px 22px;
       }
-      .grid-bg {
-        background-image: radial-gradient(rgba(15, 23, 42, 0.09) 1px, transparent 1px);
-        background-size: 18px 18px;
+      .hero-glow {
+        background: radial-gradient(ellipse 80% 60% at 50% -10%, rgba(59,130,246,0.16) 0%, transparent 70%);
+      }
+      .card-hover {
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+      .card-hover:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 20px 48px rgba(2,6,23,.13);
+      }
+      .gradient-text {
+        background: linear-gradient(135deg, #1d4ed8 0%, #3b82f6 50%, #06b6d4 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+      .btn-primary {
+        background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+        box-shadow: 0 4px 14px rgba(37,99,235,.4);
+        transition: all 0.2s ease;
+      }
+      .btn-primary:hover {
+        background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%);
+        box-shadow: 0 6px 20px rgba(37,99,235,.5);
+        transform: translateY(-1px);
+      }
+      .nav-link { position: relative; transition: color 0.2s; }
+      .nav-link::after {
+        content: ''; position: absolute; bottom: -2px; left: 0;
+        width: 0; height: 2px; background: #3b82f6;
+        border-radius: 2px; transition: width 0.2s ease;
+      }
+      .nav-link:hover::after { width: 100%; }
+      .nav-link:hover { color: #1d4ed8; }
+
+      .step-connector::before {
+        content: ''; position: absolute;
+        left: 11px; top: 28px; width: 2px;
+        height: calc(100% + 16px);
+        background: linear-gradient(to bottom, #3b82f6, transparent);
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        * { animation: none !important; transition: none !important; }
       }
     </style>
   </head>
 
-  <body class="bg-white text-slate-900 font-sans">
-    <a
-      href="#main"
-      class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:rounded-xl focus:bg-white focus:px-4 focus:py-2 focus:shadow-soft"
-      >Skip to content</a>
+  <body class="bg-[#f8fafc] text-slate-900 font-sans antialiased">
+    <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:rounded-xl focus:bg-white focus:px-4 focus:py-2 focus:shadow-soft">Skip to content</a>
 
-    <header class="sticky top-0 z-40 border-b border-slate-200/70 bg-white/80 backdrop-blur">
-      <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-        <a href="#" class="flex items-center gap-3">
-          <span
-            class="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-slate-900 text-white font-semibold"
-            aria-hidden="true"
-            >S</span
-          >
+    <!-- NAV -->
+    <header class="sticky top-0 z-40 border-b border-slate-200/60 bg-white/75 backdrop-blur-xl">
+      <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-3.5">
+        <a href="#" class="flex items-center gap-3 group">
+          <!-- Icon mark -->
+          <svg aria-hidden="true" width="36" height="36" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="navIconGrad" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#3b82f6"/>
+                <stop offset="100%" stop-color="#1d4ed8"/>
+              </linearGradient>
+            </defs>
+            <rect width="64" height="64" rx="14" fill="url(#navIconGrad)"/>
+            <rect x="13" y="18" width="7" height="30" rx="2" fill="white"/>
+            <rect x="44" y="18" width="7" height="30" rx="2" fill="white"/>
+            <rect x="13" y="18" width="38" height="7" rx="2" fill="white"/>
+            <rect x="13" y="39" width="38" height="5" rx="1.5" fill="white" opacity="0.55"/>
+            <circle cx="16.5" cy="21.5" r="3.5" fill="#2563eb"/>
+            <circle cx="47.5" cy="21.5" r="3.5" fill="#2563eb"/>
+            <circle cx="16.5" cy="41.5" r="2.5" fill="#1d4ed8" opacity="0.8"/>
+            <circle cx="47.5" cy="41.5" r="2.5" fill="#1d4ed8" opacity="0.8"/>
+            <circle cx="32" cy="21.5" r="3" fill="#3b82f6"/>
+          </svg>
           <div class="leading-tight">
-            <div class="text-sm font-semibold">Shengyi US PCB</div>
-            <div class="text-xs text-slate-600">US-based sourcing partner</div>
+            <div class="text-sm font-bold text-slate-900 group-hover:text-brand-600 transition-colors">Bridge PCB</div>
+            <div class="text-xs text-slate-500">US-based sourcing agent</div>
           </div>
         </a>
-
-        <nav class="hidden items-center gap-6 text-sm text-slate-700 md:flex" aria-label="Primary">
-          <a class="hover:text-slate-950" href="#services">Services</a>
-          <a class="hover:text-slate-950" href="#why-us">Why Us</a>
-          <a class="hover:text-slate-950" href="#case-study">Case Study</a>
-          <a class="hover:text-slate-950" href="#contact">Contact</a>
+        <nav class="hidden items-center gap-7 text-sm font-medium text-slate-600 md:flex" aria-label="Primary">
+          <a class="nav-link" href="#services">Services</a>
+          <a class="nav-link" href="#capabilities">Capabilities</a>
+          <a class="nav-link" href="#industries">Industries</a>
+          <a class="nav-link" href="#why-us">Why Us</a>
+          <a class="nav-link" href="#testimonial">Clients</a>
+          <a class="nav-link" href="#contact">Contact</a>
         </nav>
-
-        <a
-          href="#contact"
-          class="inline-flex items-center justify-center rounded-2xl bg-slate-900 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-slate-900/20"
-          >Get a quote</a>
+        <a href="#contact" class="btn-primary inline-flex items-center justify-center rounded-xl px-5 py-2.5 text-sm font-semibold text-white focus:outline-none focus:ring-2 focus:ring-brand-500/40">
+          Get a quote
+          <svg class="ml-1.5 h-4 w-4" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+        </a>
       </div>
     </header>
 
     <main id="main">
-      <!-- Homepage -->
-      <section class="relative overflow-hidden">
-        <div class="absolute inset-0 grid-bg"></div>
-        <div
-          class="pointer-events-none absolute -top-24 left-1/2 h-[520px] w-[520px] -translate-x-1/2 rounded-full bg-gradient-to-br from-slate-900/15 via-slate-900/5 to-transparent blur-2xl"
-        ></div>
 
-        <div class="relative mx-auto max-w-6xl px-6 pb-16 pt-14 md:pb-24 md:pt-20">
+      <!-- HERO -->
+      <section class="relative overflow-hidden bg-white">
+        <div class="absolute inset-0 dot-grid opacity-70"></div>
+        <div class="absolute inset-0 hero-glow pointer-events-none"></div>
+        <div class="pointer-events-none absolute -top-32 -right-32 h-[480px] w-[480px] rounded-full bg-brand-500/10 blur-3xl"></div>
+        <div class="pointer-events-none absolute -bottom-24 -left-24 h-[360px] w-[360px] rounded-full bg-cyan-400/10 blur-3xl"></div>
+
+        <div class="relative mx-auto max-w-6xl px-6 pb-20 pt-16 md:pb-28 md:pt-24">
           <div class="mx-auto max-w-3xl text-center">
-            <div
-              class="mx-auto inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/80 px-4 py-2 text-sm text-slate-700 shadow-sm"
-            >
-              <span class="font-semibold text-slate-900">US-based PCB sourcing partner powered by Shengyi</span>
+            <div class="mx-auto inline-flex items-center gap-2 rounded-full border border-brand-200 bg-brand-50 px-4 py-1.5 text-xs font-semibold text-brand-700 shadow-sm">
+              <span class="h-1.5 w-1.5 rounded-full bg-brand-500 animate-pulse"></span>
+              US-based sourcing agent — backed by leading PCB manufacturers in China
             </div>
 
-            <h1 class="mt-6 text-balance text-4xl font-extrabold tracking-tight text-slate-950 md:text-6xl">
-              Reliable PCB sourcing, with US speed and real accountability
+            <h1 class="mt-7 text-balance text-5xl font-black tracking-tight text-slate-950 md:text-[4rem] md:leading-[1.08]">
+              Your One-Stop Shop for<br class="hidden md:block"/>
+              <span class="gradient-text">PCB &amp; PCBA Manufacturing</span><br class="hidden md:block"/>
+              Excellence
             </h1>
-            <p class="mt-5 text-pretty text-lg leading-relaxed text-slate-600 md:text-xl">
-              We coordinate PCB manufacturing, quality checks, and logistics—so your team gets consistent results without
-              late-night overseas follow-ups.
+            <p class="mt-6 text-pretty text-lg leading-relaxed text-slate-500 md:text-xl">
+              From concept to creation — we handle technical support, manufacturing coordination, quality assurance, and logistics so your team stays focused on engineering.
             </p>
 
-            <div class="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-              <a
-                href="#contact"
-                class="inline-flex w-full items-center justify-center rounded-2xl bg-slate-900 px-6 py-3 text-base font-semibold text-white shadow-sm hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-slate-900/20 sm:w-auto"
-                >Request a quote</a>
-              <a
-                href="#case-study"
-                class="inline-flex w-full items-center justify-center rounded-2xl border border-slate-300 bg-white px-6 py-3 text-base font-semibold text-slate-900 shadow-sm hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-slate-900/10 sm:w-auto"
-                >See proof</a>
+            <div class="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
+              <a href="#contact" class="btn-primary inline-flex w-full items-center justify-center rounded-xl px-7 py-3.5 text-base font-semibold text-white focus:outline-none focus:ring-2 focus:ring-brand-500/40 sm:w-auto">
+                Request a quote
+                <svg class="ml-2 h-4 w-4" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+              </a>
+              <a href="#capabilities" class="inline-flex w-full items-center justify-center rounded-xl border border-slate-200 bg-white px-7 py-3.5 text-base font-semibold text-slate-700 shadow-sm hover:border-brand-200 hover:bg-brand-50 hover:text-brand-700 transition-colors focus:outline-none sm:w-auto">
+                Our capabilities
+              </a>
             </div>
 
-            <div class="mt-10 grid grid-cols-1 gap-4 text-left sm:grid-cols-3">
-              <div class="rounded-2xl border border-slate-200 bg-white/80 p-5 shadow-sm">
-                <div class="text-sm font-semibold text-slate-900">Fast communication</div>
-                <div class="mt-1 text-sm text-slate-600">US-based response loops to keep builds moving.</div>
+            <!-- Hero stat cards -->
+            <div class="mt-12 grid grid-cols-1 gap-4 text-left sm:grid-cols-3">
+              <div class="card-hover rounded-2xl border border-slate-200 bg-white p-5 shadow-soft">
+                <div class="flex items-center gap-2 mb-2">
+                  <span class="flex h-8 w-8 items-center justify-center rounded-lg bg-brand-50">
+                    <svg class="h-4 w-4 text-brand-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                  </span>
+                  <div class="text-sm font-bold text-slate-900">US-based speed</div>
+                </div>
+                <div class="text-sm text-slate-500">Same-timezone response loops. No late-night overseas follow-ups.</div>
               </div>
-              <div class="rounded-2xl border border-slate-200 bg-white/80 p-5 shadow-sm">
-                <div class="text-sm font-semibold text-slate-900">Enterprise-ready</div>
-                <div class="mt-1 text-sm text-slate-600">Process, documentation, and reliability you can scale.</div>
+              <div class="card-hover rounded-2xl border border-slate-200 bg-white p-5 shadow-soft">
+                <div class="flex items-center gap-2 mb-2">
+                  <span class="flex h-8 w-8 items-center justify-center rounded-lg bg-brand-50">
+                    <svg class="h-4 w-4 text-brand-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18"/></svg>
+                  </span>
+                  <div class="text-sm font-bold text-slate-900">2L–46L &amp; HDI</div>
+                </div>
+                <div class="text-sm text-slate-500">Standard through advanced HDI, Flex, Rigid-Flex, and PCBA.</div>
               </div>
-              <div class="rounded-2xl border border-slate-200 bg-white/80 p-5 shadow-sm">
-                <div class="text-sm font-semibold text-slate-900">Powered by Shengyi</div>
-                <div class="mt-1 text-sm text-slate-600">Sourcing aligned with a proven manufacturing ecosystem.</div>
+              <div class="card-hover rounded-2xl border border-slate-200 bg-white p-5 shadow-soft">
+                <div class="flex items-center gap-2 mb-2">
+                  <span class="flex h-8 w-8 items-center justify-center rounded-lg bg-brand-50">
+                    <svg class="h-4 w-4 text-brand-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                  </span>
+                  <div class="text-sm font-bold text-slate-900">China manufacturing</div>
+                </div>
+                <div class="text-sm text-slate-500">Backed by leading PCB manufacturers in China.</div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- Services -->
-      <section id="services" class="border-t border-slate-200 bg-slate-50/60">
-        <div class="mx-auto max-w-6xl px-6 py-16 md:py-20">
-          <div class="mx-auto max-w-3xl text-center">
-            <h2 class="text-3xl font-extrabold tracking-tight text-slate-950 md:text-4xl">Services</h2>
-            <p class="mt-4 text-lg text-slate-600">Full-service sourcing and coordination for prototype through production.</p>
-          </div>
-
-          <div class="mt-10 grid gap-6 md:grid-cols-3">
-            <div class="rounded-3xl border border-slate-200 bg-white p-7 shadow-soft">
-              <h3 class="text-lg font-bold text-slate-950">PCB manufacturing</h3>
-              <p class="mt-2 text-slate-600">
-                Prototype to production builds with clear specs, timelines, and manufacturing readiness.
-              </p>
-              <ul class="mt-4 space-y-2 text-sm text-slate-700">
-                <li>DFM-ready handoff</li>
-                <li>Build status visibility</li>
-                <li>Revision control support</li>
-              </ul>
-            </div>
-
-            <div class="rounded-3xl border border-slate-200 bg-white p-7 shadow-soft">
-              <h3 class="text-lg font-bold text-slate-950">Sourcing &amp; coordination</h3>
-              <p class="mt-2 text-slate-600">
-                We own the communication loop so your team stays focused on engineering, not chasing updates.
-              </p>
-              <ul class="mt-4 space-y-2 text-sm text-slate-700">
-                <li>Single accountable point of contact</li>
-                <li>Timeline and risk management</li>
-                <li>Supplier coordination</li>
-              </ul>
-            </div>
-
-            <div class="rounded-3xl border border-slate-200 bg-white p-7 shadow-soft">
-              <h3 class="text-lg font-bold text-slate-950">QA / logistics</h3>
-              <p class="mt-2 text-slate-600">
-                Quality checks and shipping coordination to reduce surprises at receiving.
-              </p>
-              <ul class="mt-4 space-y-2 text-sm text-slate-700">
-                <li>Incoming checks on request</li>
-                <li>Packaging and labeling support</li>
-                <li>Delivery coordination</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Why Us -->
-      <section id="why-us" class="border-t border-slate-200 bg-white">
-        <div class="mx-auto max-w-6xl px-6 py-16 md:py-20">
-          <div class="grid gap-10 md:grid-cols-2 md:items-start">
+      <!-- STATS BANNER -->
+      <section class="border-y border-slate-200/80 bg-gradient-to-r from-brand-700 via-brand-600 to-brand-800">
+        <div class="mx-auto max-w-6xl px-6 py-10">
+          <div class="grid grid-cols-2 gap-8 text-center md:grid-cols-4">
             <div>
-              <h2 class="text-3xl font-extrabold tracking-tight text-slate-950 md:text-4xl">Why us</h2>
-              <p class="mt-4 text-lg text-slate-600">
-                You’re not buying a one-off transaction—you’re getting a US-based partner who stays engaged from quote to
-                delivery.
-              </p>
-              <div class="mt-8 grid gap-4">
-                <div class="rounded-2xl border border-slate-200 bg-slate-50 p-5">
-                  <div class="font-semibold text-slate-950">US-based</div>
-                  <div class="mt-1 text-sm text-slate-600">Local timezone for planning calls and fast decisions.</div>
-                </div>
-                <div class="rounded-2xl border border-slate-200 bg-slate-50 p-5">
-                  <div class="font-semibold text-slate-950">Fast communication</div>
-                  <div class="mt-1 text-sm text-slate-600">Short feedback loops so your schedule doesn’t slip.</div>
-                </div>
-                <div class="rounded-2xl border border-slate-200 bg-slate-50 p-5">
-                  <div class="font-semibold text-slate-950">Enterprise-ready</div>
-                  <div class="mt-1 text-sm text-slate-600">Process, accountability, and documentation you can trust.</div>
-                </div>
-                <div class="rounded-2xl border border-slate-200 bg-slate-50 p-5">
-                  <div class="font-semibold text-slate-950">Real relationship</div>
-                  <div class="mt-1 text-sm text-slate-600">We improve outcomes over time, not just one purchase.</div>
-                </div>
-              </div>
+              <div class="text-3xl font-black text-white">40+</div>
+              <div class="mt-1 text-sm text-brand-200">Years of PCB expertise</div>
             </div>
-
-            <div class="rounded-3xl border border-slate-200 bg-gradient-to-b from-slate-50 to-white p-8 shadow-soft">
-              <h3 class="text-lg font-bold text-slate-950">What you can expect</h3>
-              <div class="mt-4 space-y-4 text-sm text-slate-700">
-                <div class="flex gap-3">
-                  <span class="mt-0.5 inline-flex h-6 w-6 items-center justify-center rounded-lg bg-slate-900 text-white"
-                    >1</span
-                  >
-                  <div>
-                    <div class="font-semibold text-slate-950">Clear specs intake</div>
-                    <div class="mt-1 text-slate-600">We ask the right questions upfront to reduce rework.</div>
-                  </div>
-                </div>
-                <div class="flex gap-3">
-                  <span class="mt-0.5 inline-flex h-6 w-6 items-center justify-center rounded-lg bg-slate-900 text-white"
-                    >2</span
-                  >
-                  <div>
-                    <div class="font-semibold text-slate-950">Coordinated build</div>
-                    <div class="mt-1 text-slate-600">Status updates and escalation when it matters.</div>
-                  </div>
-                </div>
-                <div class="flex gap-3">
-                  <span class="mt-0.5 inline-flex h-6 w-6 items-center justify-center rounded-lg bg-slate-900 text-white"
-                    >3</span
-                  >
-                  <div>
-                    <div class="font-semibold text-slate-950">Shipment to receiving</div>
-                    <div class="mt-1 text-slate-600">Logistics coordination so delivery is predictable.</div>
-                  </div>
-                </div>
-              </div>
-              <div class="mt-8 rounded-2xl border border-slate-200 bg-white p-5">
-                <div class="text-sm font-semibold text-slate-950">Typical RFQ inputs</div>
-                <div class="mt-2 text-sm text-slate-600">
-                  Gerbers, stackup/impedance needs, material preferences, quantity, lead time target, and any QA
-                  requirements.
-                </div>
-              </div>
+            <div>
+              <div class="text-3xl font-black text-white">10+</div>
+              <div class="mt-1 text-sm text-brand-200">Major markets served</div>
+            </div>
+            <div>
+              <div class="text-3xl font-black text-white">100+</div>
+              <div class="mt-1 text-sm text-brand-200">Global clients</div>
+            </div>
+            <div>
+              <div class="text-3xl font-black text-white">6</div>
+              <div class="mt-1 text-sm text-brand-200">Factories in Asia</div>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- Case Study -->
-      <section id="case-study" class="border-t border-slate-200 bg-slate-50/60">
-        <div class="mx-auto max-w-6xl px-6 py-16 md:py-20">
-          <div class="mx-auto max-w-3xl text-center">
-            <h2 class="text-3xl font-extrabold tracking-tight text-slate-950 md:text-4xl">Case study</h2>
-            <p class="mt-4 text-lg text-slate-600">
-              Use real, existing success. This section is designed to build trust fast.
-            </p>
+      <!-- SERVICES -->
+      <section id="services" class="bg-[#f8fafc]">
+        <div class="mx-auto max-w-6xl px-6 py-20 md:py-24">
+          <div class="mx-auto max-w-2xl text-center">
+            <div class="inline-flex items-center gap-2 rounded-full bg-brand-50 px-4 py-1.5 text-xs font-semibold text-brand-700 mb-4">What We Offer</div>
+            <h2 class="text-3xl font-extrabold tracking-tight text-slate-950 md:text-4xl">Innovative products and services<br/>from concept to creation</h2>
+            <p class="mt-4 text-lg text-slate-500">We adapt to the complexity of high-mix, low-to-high-volume production — with a US team that owns your success.</p>
           </div>
 
-          <div class="mt-10 grid gap-6 md:grid-cols-3">
-            <div class="rounded-3xl border border-slate-200 bg-white p-7 shadow-soft">
-              <div class="text-sm font-semibold text-slate-950">Website ranking</div>
-              <p class="mt-2 text-sm text-slate-600">
-                Replace this with your top keywords, search positions, and how that drove inbound leads.
-              </p>
-              <div class="mt-5 rounded-2xl bg-slate-50 p-4 text-sm text-slate-700">
-                <div class="font-semibold text-slate-950">Example metric</div>
-                <div class="mt-1">“Top 3 for [keyword]”</div>
+          <div class="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+            <!-- Card 1 -->
+            <div class="card-hover rounded-3xl border border-slate-200 bg-white p-7 shadow-soft flex flex-col">
+              <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-brand-500 to-brand-700 shadow-glow-sm mb-5">
+                <svg class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
               </div>
+              <h3 class="text-base font-bold text-slate-950">Technical &amp; Commercial Support</h3>
+              <p class="mt-2 text-sm text-slate-500 leading-relaxed flex-1">Our technical team reviews every project for manufacturing feasibility, identifies challenges early, and develops a clear roadmap with milestones and deadlines.</p>
+              <ul class="mt-4 space-y-2">
+                <li class="flex items-center gap-2 text-xs text-slate-600"><span class="flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-brand-50"><svg class="h-2.5 w-2.5 text-brand-600" fill="none" viewBox="0 0 10 10" stroke="currentColor" stroke-width="2.5"><path d="M1.5 5l2.5 2.5 4.5-4.5"/></svg></span>Feasibility &amp; DFM review</li>
+                <li class="flex items-center gap-2 text-xs text-slate-600"><span class="flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-brand-50"><svg class="h-2.5 w-2.5 text-brand-600" fill="none" viewBox="0 0 10 10" stroke="currentColor" stroke-width="2.5"><path d="M1.5 5l2.5 2.5 4.5-4.5"/></svg></span>Project roadmap &amp; milestones</li>
+                <li class="flex items-center gap-2 text-xs text-slate-600"><span class="flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-brand-50"><svg class="h-2.5 w-2.5 text-brand-600" fill="none" viewBox="0 0 10 10" stroke="currentColor" stroke-width="2.5"><path d="M1.5 5l2.5 2.5 4.5-4.5"/></svg></span>Supply chain &amp; logistics</li>
+              </ul>
             </div>
 
-            <div class="rounded-3xl border border-slate-200 bg-white p-7 shadow-soft">
-              <div class="text-sm font-semibold text-slate-950">Business growth</div>
-              <p class="mt-2 text-sm text-slate-600">
-                Add your before/after: revenue, number of customers, repeat orders, or production scale.
-              </p>
-              <div class="mt-5 rounded-2xl bg-slate-50 p-4 text-sm text-slate-700">
-                <div class="font-semibold text-slate-950">Example metric</div>
-                <div class="mt-1">“+X% YoY inbound RFQs”</div>
+            <!-- Card 2 (highlighted) -->
+            <div class="card-hover rounded-3xl bg-gradient-to-br from-brand-600 to-brand-800 p-7 shadow-glow flex flex-col">
+              <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-white/20 backdrop-blur-sm mb-5">
+                <svg class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18"/></svg>
               </div>
+              <h3 class="text-base font-bold text-white">Reliable PCBs — Standard &amp; Complex</h3>
+              <p class="mt-2 text-sm text-brand-100 leading-relaxed flex-1">From simple 2-layer boards to 46-layer HDI, Flex, Rigid-Flex, and specialty substrates — we source the right board for your design.</p>
+              <ul class="mt-4 space-y-2">
+                <li class="flex items-center gap-2 text-xs text-brand-100"><span class="flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-white/20"><svg class="h-2.5 w-2.5 text-white" fill="none" viewBox="0 0 10 10" stroke="currentColor" stroke-width="2.5"><path d="M1.5 5l2.5 2.5 4.5-4.5"/></svg></span>2L–46L, HDI (AnyLayer, 3+N+3)</li>
+                <li class="flex items-center gap-2 text-xs text-brand-100"><span class="flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-white/20"><svg class="h-2.5 w-2.5 text-white" fill="none" viewBox="0 0 10 10" stroke="currentColor" stroke-width="2.5"><path d="M1.5 5l2.5 2.5 4.5-4.5"/></svg></span>Flex, Rigid-Flex, Metal (IMS)</li>
+                <li class="flex items-center gap-2 text-xs text-brand-100"><span class="flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-white/20"><svg class="h-2.5 w-2.5 text-white" fill="none" viewBox="0 0 10 10" stroke="currentColor" stroke-width="2.5"><path d="M1.5 5l2.5 2.5 4.5-4.5"/></svg></span>PCBA turnkey available</li>
+              </ul>
             </div>
 
-            <div class="rounded-3xl border border-slate-200 bg-white p-7 shadow-soft">
-              <div class="text-sm font-semibold text-slate-950">Real results</div>
-              <p class="mt-2 text-sm text-slate-600">
-                Include outcomes customers care about: lead time reduction, yield, fewer ECO loops, fewer delays.
-              </p>
-              <div class="mt-5 rounded-2xl bg-slate-50 p-4 text-sm text-slate-700">
-                <div class="font-semibold text-slate-950">Example metric</div>
-                <div class="mt-1">“Cut lead time by X days”</div>
+            <!-- Card 3 -->
+            <div class="card-hover rounded-3xl border border-slate-200 bg-white p-7 shadow-soft flex flex-col">
+              <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-brand-500 to-brand-700 shadow-glow-sm mb-5">
+                <svg class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
               </div>
+              <h3 class="text-base font-bold text-slate-950">Capacity for Long-Term Programs</h3>
+              <p class="mt-2 text-sm text-slate-500 leading-relaxed flex-1">Dedicated prototype and quick-turn capacity, plus production sites that scale with your program — from NPI through sustained volume.</p>
+              <ul class="mt-4 space-y-2">
+                <li class="flex items-center gap-2 text-xs text-slate-600"><span class="flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-brand-50"><svg class="h-2.5 w-2.5 text-brand-600" fill="none" viewBox="0 0 10 10" stroke="currentColor" stroke-width="2.5"><path d="M1.5 5l2.5 2.5 4.5-4.5"/></svg></span>Dedicated QTA &amp; prototype team</li>
+                <li class="flex items-center gap-2 text-xs text-slate-600"><span class="flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-brand-50"><svg class="h-2.5 w-2.5 text-brand-600" fill="none" viewBox="0 0 10 10" stroke="currentColor" stroke-width="2.5"><path d="M1.5 5l2.5 2.5 4.5-4.5"/></svg></span>Prototype to production scale-up</li>
+                <li class="flex items-center gap-2 text-xs text-slate-600"><span class="flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-brand-50"><svg class="h-2.5 w-2.5 text-brand-600" fill="none" viewBox="0 0 10 10" stroke="currentColor" stroke-width="2.5"><path d="M1.5 5l2.5 2.5 4.5-4.5"/></svg></span>On-time delivery management</li>
+              </ul>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="card-hover rounded-3xl border border-slate-200 bg-white p-7 shadow-soft flex flex-col">
+              <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-brand-500 to-brand-700 shadow-glow-sm mb-5">
+                <svg class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              </div>
+              <h3 class="text-base font-bold text-slate-950">Value-Added Services</h3>
+              <p class="mt-2 text-sm text-slate-500 leading-relaxed flex-1">Technical data review, cost optimization, and access to special materials — we help you get the best price while protecting performance.</p>
+              <ul class="mt-4 space-y-2">
+                <li class="flex items-center gap-2 text-xs text-slate-600"><span class="flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-brand-50"><svg class="h-2.5 w-2.5 text-brand-600" fill="none" viewBox="0 0 10 10" stroke="currentColor" stroke-width="2.5"><path d="M1.5 5l2.5 2.5 4.5-4.5"/></svg></span>Cost-saving design review</li>
+                <li class="flex items-center gap-2 text-xs text-slate-600"><span class="flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-brand-50"><svg class="h-2.5 w-2.5 text-brand-600" fill="none" viewBox="0 0 10 10" stroke="currentColor" stroke-width="2.5"><path d="M1.5 5l2.5 2.5 4.5-4.5"/></svg></span>Special technologies &amp; materials</li>
+                <li class="flex items-center gap-2 text-xs text-slate-600"><span class="flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-brand-50"><svg class="h-2.5 w-2.5 text-brand-600" fill="none" viewBox="0 0 10 10" stroke="currentColor" stroke-width="2.5"><path d="M1.5 5l2.5 2.5 4.5-4.5"/></svg></span>Incoming QA on request</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CAPABILITIES -->
+      <section id="capabilities" class="border-t border-slate-200/80 bg-white">
+        <div class="mx-auto max-w-6xl px-6 py-20 md:py-24">
+          <div class="mx-auto max-w-2xl text-center mb-12">
+            <div class="inline-flex items-center gap-2 rounded-full bg-brand-50 px-4 py-1.5 text-xs font-semibold text-brand-700 mb-4">PCB Technologies</div>
+            <h2 class="text-3xl font-extrabold tracking-tight text-slate-950 md:text-4xl">Broad technology range,<br/>delivered reliably</h2>
+            <p class="mt-4 text-lg text-slate-500">From standard rigid boards to the most demanding HDI, backplane, and specialty constructions.</p>
+          </div>
+
+          <!-- Product type cards -->
+          <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            <div class="card-hover rounded-2xl border border-slate-200 bg-slate-50/60 p-5">
+              <div class="text-xs font-bold uppercase tracking-wider text-brand-600 mb-2">Rigid PCB — Line Cards</div>
+              <div class="font-semibold text-slate-900 text-sm mb-1">2–40 Layers</div>
+              <div class="text-sm text-slate-500">Tight impedance control, buried &amp; blind vias, via-in-pad (VIPPO), copper fill. Board thickness 0.3–5.0 mm.</div>
+            </div>
+            <div class="card-hover rounded-2xl border border-slate-200 bg-slate-50/60 p-5">
+              <div class="text-xs font-bold uppercase tracking-wider text-brand-600 mb-2">Backplane</div>
+              <div class="font-semibold text-slate-900 text-sm mb-1">2–56 Layers</div>
+              <div class="text-sm text-slate-500">High-speed backplane systems supporting 28G / 56G / 112G signaling. Back-drill, insertion loss management.</div>
+            </div>
+            <div class="card-hover rounded-2xl border border-slate-200 bg-slate-50/60 p-5">
+              <div class="text-xs font-bold uppercase tracking-wider text-brand-600 mb-2">Server / HPC</div>
+              <div class="font-semibold text-slate-900 text-sm mb-1">20–40 Layers</div>
+              <div class="text-sm text-slate-500">Blade, rack, and cabinet server boards. Multi-platform (Purley, Whitely, Eagle Stream). 0.65 mm BGA pitch support.</div>
+            </div>
+            <div class="card-hover rounded-2xl border border-slate-200 bg-slate-50/60 p-5">
+              <div class="text-xs font-bold uppercase tracking-wider text-brand-600 mb-2">HDI</div>
+              <div class="font-semibold text-slate-900 text-sm mb-1">4–30 Layers</div>
+              <div class="text-sm text-slate-500">Sequential lamination, 3+N+3, AnyLayer HDI. Laser holes ≥ 0.075 mm. PTH aspect ratio up to 40:1.</div>
+            </div>
+            <div class="card-hover rounded-2xl border border-slate-200 bg-slate-50/60 p-5">
+              <div class="text-xs font-bold uppercase tracking-wider text-brand-600 mb-2">Flex &amp; Rigid-Flex</div>
+              <div class="font-semibold text-slate-900 text-sm mb-1">4–20 Layers</div>
+              <div class="text-sm text-slate-500">PI (polyimide) base material. Single, double, and multilayer flex; rigid-flex for space-constrained and wearable applications.</div>
+            </div>
+            <div class="card-hover rounded-2xl border border-slate-200 bg-slate-50/60 p-5">
+              <div class="text-xs font-bold uppercase tracking-wider text-brand-600 mb-2">Specialty</div>
+              <div class="font-semibold text-slate-900 text-sm mb-1">Metal (IMS), Embedded Coin, Optical</div>
+              <div class="text-sm text-slate-500">Aluminum &amp; copper-core IMS for thermal management. Embedded copper coin for power-dense modules. 100G–400G optical module boards.</div>
             </div>
           </div>
 
-          <div class="mt-6 rounded-3xl border border-slate-200 bg-white p-7 shadow-soft">
-            <div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+          <!-- Specs + Materials two-column -->
+          <div class="mt-6 grid gap-4 md:grid-cols-2">
+            <!-- Tech specs table -->
+            <div class="rounded-2xl border border-slate-200 bg-slate-50/60 p-6">
+              <div class="text-xs font-bold uppercase tracking-wider text-brand-600 mb-4">Manufacturing Specs</div>
+              <div class="space-y-2.5 text-sm">
+                <div class="flex justify-between"><span class="text-slate-500">Board thickness</span><span class="font-semibold text-slate-900">0.3 – 5.0 mm</span></div>
+                <div class="h-px bg-slate-200"></div>
+                <div class="flex justify-between"><span class="text-slate-500">Min. mechanical drill</span><span class="font-semibold text-slate-900">≥ 0.15 mm</span></div>
+                <div class="h-px bg-slate-200"></div>
+                <div class="flex justify-between"><span class="text-slate-500">Min. laser hole</span><span class="font-semibold text-slate-900">≥ 0.075 mm</span></div>
+                <div class="h-px bg-slate-200"></div>
+                <div class="flex justify-between"><span class="text-slate-500">PTH aspect ratio</span><span class="font-semibold text-slate-900">Up to 40:1</span></div>
+                <div class="h-px bg-slate-200"></div>
+                <div class="flex justify-between"><span class="text-slate-500">Min. BGA pitch</span><span class="font-semibold text-slate-900">0.65 mm</span></div>
+                <div class="h-px bg-slate-200"></div>
+                <div class="flex justify-between"><span class="text-slate-500">Max layers (backplane)</span><span class="font-semibold text-slate-900">56 L</span></div>
+              </div>
+            </div>
+            <!-- Materials & surface finish -->
+            <div class="rounded-2xl border border-slate-200 bg-slate-50/60 p-6">
+              <div class="text-xs font-bold uppercase tracking-wider text-brand-600 mb-4">Materials &amp; Surface Finish</div>
+              <div class="mb-3">
+                <div class="text-xs font-semibold text-slate-700 mb-1.5">Materials</div>
+                <div class="flex flex-wrap gap-2">
+                  <span class="rounded-full bg-white border border-slate-200 px-3 py-1 text-xs text-slate-600">Mid &amp; High Tg (lead-free)</span>
+                  <span class="rounded-full bg-white border border-slate-200 px-3 py-1 text-xs text-slate-600">Halogen-free</span>
+                  <span class="rounded-full bg-white border border-slate-200 px-3 py-1 text-xs text-slate-600">High-frequency (PTFE)</span>
+                  <span class="rounded-full bg-white border border-slate-200 px-3 py-1 text-xs text-slate-600">High-speed (low/very low/ultra low loss)</span>
+                  <span class="rounded-full bg-white border border-slate-200 px-3 py-1 text-xs text-slate-600">Polyimide (PI)</span>
+                  <span class="rounded-full bg-white border border-slate-200 px-3 py-1 text-xs text-slate-600">Buried capacitance &amp; resistance</span>
+                </div>
+              </div>
               <div>
-                <div class="text-sm font-semibold text-slate-950">Make this section “real” in 10 minutes</div>
-                <div class="mt-1 text-sm text-slate-600">
-                  Swap the example metrics for your true numbers and one short paragraph describing the story.
+                <div class="text-xs font-semibold text-slate-700 mb-1.5">Surface Finish</div>
+                <div class="flex flex-wrap gap-2">
+                  <span class="rounded-full bg-white border border-slate-200 px-3 py-1 text-xs text-slate-600">Lead-free HASL</span>
+                  <span class="rounded-full bg-white border border-slate-200 px-3 py-1 text-xs text-slate-600">ENIG</span>
+                  <span class="rounded-full bg-white border border-slate-200 px-3 py-1 text-xs text-slate-600">Immersion Tin</span>
+                  <span class="rounded-full bg-white border border-slate-200 px-3 py-1 text-xs text-slate-600">Immersion Silver</span>
+                  <span class="rounded-full bg-white border border-slate-200 px-3 py-1 text-xs text-slate-600">Gold Fingers</span>
+                  <span class="rounded-full bg-white border border-slate-200 px-3 py-1 text-xs text-slate-600">OSP + ENIG</span>
                 </div>
               </div>
-              <a
-                href="#contact"
-                class="inline-flex items-center justify-center rounded-2xl bg-slate-900 px-5 py-3 text-sm font-semibold text-white shadow-sm hover:bg-slate-800"
-                >Use this proof in my quote</a>
+            </div>
+          </div>
+
+          <div class="mt-6 rounded-3xl border border-brand-100 bg-brand-50 p-6 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+            <div>
+              <div class="font-semibold text-slate-950">Typical RFQ inputs</div>
+              <div class="mt-1 text-sm text-slate-600">Gerbers, stackup / impedance requirements, material preferences, quantity, lead time target, and any QA or certification needs.</div>
+            </div>
+            <a href="#contact" class="btn-primary shrink-0 inline-flex items-center justify-center rounded-xl px-6 py-3 text-sm font-semibold text-white focus:outline-none focus:ring-2 focus:ring-brand-500/40">
+              Send an RFQ
+              <svg class="ml-1.5 h-4 w-4" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- INDUSTRIES -->
+      <section id="industries" class="border-t border-slate-200/80 bg-[#f8fafc]">
+        <div class="mx-auto max-w-6xl px-6 py-20 md:py-24">
+          <div class="mx-auto max-w-2xl text-center mb-12">
+            <div class="inline-flex items-center gap-2 rounded-full bg-brand-50 px-4 py-1.5 text-xs font-semibold text-brand-700 mb-4">Industries We Serve</div>
+            <h2 class="text-3xl font-extrabold tracking-tight text-slate-950 md:text-4xl">Built for the most demanding applications</h2>
+            <p class="mt-4 text-lg text-slate-500">Our manufacturing partners hold certifications for automotive, aerospace, medical, and high-reliability electronics.</p>
+          </div>
+
+          <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            <!-- Communication -->
+            <div class="card-hover rounded-3xl border border-slate-200 bg-white p-7 shadow-soft">
+              <div class="flex h-11 w-11 items-center justify-center rounded-xl bg-brand-50 mb-4">
+                <svg class="h-5 w-5 text-brand-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071c3.904-3.905 10.236-3.905 14.141 0M1.394 9.393c5.857-5.857 15.355-5.857 21.213 0"/></svg>
+              </div>
+              <h3 class="font-bold text-slate-950 mb-2">Communication &amp; Network</h3>
+              <p class="text-sm text-slate-500 leading-relaxed mb-4">Switch equipment (28G/56G/112G backbone), 5G AAU &amp; small cells, 100G–400G optical modules, power supply boards.</p>
+              <div class="flex flex-wrap gap-1.5">
+                <span class="rounded-full bg-slate-100 px-2.5 py-0.5 text-xs text-slate-600">5G mmWave</span>
+                <span class="rounded-full bg-slate-100 px-2.5 py-0.5 text-xs text-slate-600">400G Optical</span>
+                <span class="rounded-full bg-slate-100 px-2.5 py-0.5 text-xs text-slate-600">112G Backplane</span>
+              </div>
+            </div>
+
+            <!-- Servers / HPC -->
+            <div class="card-hover rounded-3xl border border-slate-200 bg-white p-7 shadow-soft">
+              <div class="flex h-11 w-11 items-center justify-center rounded-xl bg-brand-50 mb-4">
+                <svg class="h-5 w-5 text-brand-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01"/></svg>
+              </div>
+              <h3 class="font-bold text-slate-950 mb-2">Supercomputers &amp; Servers</h3>
+              <p class="text-sm text-slate-500 leading-relaxed mb-4">Blade, rack, and cabinet server boards. Flash &amp; hybrid storage. AI accelerator boards. Multi-platform (Purley, Whitely, Eagle Stream).</p>
+              <div class="flex flex-wrap gap-1.5">
+                <span class="rounded-full bg-slate-100 px-2.5 py-0.5 text-xs text-slate-600">HPC / AI</span>
+                <span class="rounded-full bg-slate-100 px-2.5 py-0.5 text-xs text-slate-600">20–40 Layer</span>
+                <span class="rounded-full bg-slate-100 px-2.5 py-0.5 text-xs text-slate-600">0.65mm BGA</span>
+              </div>
+            </div>
+
+            <!-- Automotive -->
+            <div class="card-hover rounded-3xl border border-slate-200 bg-white p-7 shadow-soft">
+              <div class="flex h-11 w-11 items-center justify-center rounded-xl bg-brand-50 mb-4">
+                <svg class="h-5 w-5 text-brand-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 17a2 2 0 11-4 0 2 2 0 014 0zM19 17a2 2 0 11-4 0 2 2 0 014 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10l2 2h8zM13 6h1.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V15a1 1 0 01-1 1h-1"/></svg>
+              </div>
+              <h3 class="font-bold text-slate-950 mb-2">Automotive Electronics</h3>
+              <p class="text-sm text-slate-500 leading-relaxed mb-4">BMS/BCU for EV batteries, ADAS (radar, camera, LiDAR), ECU &amp; inverter control, infotainment. IATF 16949 certified.</p>
+              <div class="flex flex-wrap gap-1.5">
+                <span class="rounded-full bg-slate-100 px-2.5 py-0.5 text-xs text-slate-600">IATF 16949</span>
+                <span class="rounded-full bg-slate-100 px-2.5 py-0.5 text-xs text-slate-600">EV / BMS</span>
+                <span class="rounded-full bg-slate-100 px-2.5 py-0.5 text-xs text-slate-600">ADAS</span>
+              </div>
+            </div>
+
+            <!-- Aerospace -->
+            <div class="card-hover rounded-3xl border border-slate-200 bg-white p-7 shadow-soft">
+              <div class="flex h-11 w-11 items-center justify-center rounded-xl bg-brand-50 mb-4">
+                <svg class="h-5 w-5 text-brand-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 3l14 9-14 9V3z"/></svg>
+              </div>
+              <h3 class="font-bold text-slate-950 mb-2">Aerospace &amp; Defense</h3>
+              <p class="text-sm text-slate-500 leading-relaxed mb-4">High-speed rail comms, aerospace-qualified boards, national defense programs. Nadcap &amp; AS9100 certified. Fast QTA sample capability.</p>
+              <div class="flex flex-wrap gap-1.5">
+                <span class="rounded-full bg-slate-100 px-2.5 py-0.5 text-xs text-slate-600">Nadcap</span>
+                <span class="rounded-full bg-slate-100 px-2.5 py-0.5 text-xs text-slate-600">AS9100D</span>
+                <span class="rounded-full bg-slate-100 px-2.5 py-0.5 text-xs text-slate-600">QTA / Fast-turn</span>
+              </div>
+            </div>
+
+            <!-- Industrial / Medical -->
+            <div class="card-hover rounded-3xl border border-slate-200 bg-white p-7 shadow-soft">
+              <div class="flex h-11 w-11 items-center justify-center rounded-xl bg-brand-50 mb-4">
+                <svg class="h-5 w-5 text-brand-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+              </div>
+              <h3 class="font-bold text-slate-950 mb-2">Industrial Control &amp; Medical</h3>
+              <p class="text-sm text-slate-500 leading-relaxed mb-4">Medical imaging (ultrasound, CT, MRI), in-vitro analysis, life-support systems, industrial robots &amp; computers. ISO 13485 certified.</p>
+              <div class="flex flex-wrap gap-1.5">
+                <span class="rounded-full bg-slate-100 px-2.5 py-0.5 text-xs text-slate-600">ISO 13485</span>
+                <span class="rounded-full bg-slate-100 px-2.5 py-0.5 text-xs text-slate-600">Medical Imaging</span>
+                <span class="rounded-full bg-slate-100 px-2.5 py-0.5 text-xs text-slate-600">IPC Class 3</span>
+              </div>
+            </div>
+
+            <!-- Consumer -->
+            <div class="card-hover rounded-3xl border border-slate-200 bg-white p-7 shadow-soft">
+              <div class="flex h-11 w-11 items-center justify-center rounded-xl bg-brand-50 mb-4">
+                <svg class="h-5 w-5 text-brand-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+              </div>
+              <h3 class="font-bold text-slate-950 mb-2">Consumer Electronics</h3>
+              <p class="text-sm text-slate-500 leading-relaxed mb-4">Smartphones (HDI mass production), wearables (Rigid-Flex), smart home, MiniLED displays. Automated production with cleanliness control.</p>
+              <div class="flex flex-wrap gap-1.5">
+                <span class="rounded-full bg-slate-100 px-2.5 py-0.5 text-xs text-slate-600">HDI Mass Prod.</span>
+                <span class="rounded-full bg-slate-100 px-2.5 py-0.5 text-xs text-slate-600">MiniLED</span>
+                <span class="rounded-full bg-slate-100 px-2.5 py-0.5 text-xs text-slate-600">Wearables</span>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- Contact / Quote form -->
-      <section id="contact" class="border-t border-slate-200 bg-white">
-        <div class="mx-auto max-w-6xl px-6 py-16 md:py-20">
-          <div class="mx-auto max-w-3xl text-center">
-            <h2 class="text-3xl font-extrabold tracking-tight text-slate-950 md:text-4xl">Contact / Quote</h2>
-            <p class="mt-4 text-lg text-slate-600">Simple, clean, no friction. We’ll respond quickly from the US.</p>
+      <!-- CERTIFICATIONS -->
+      <section class="border-t border-slate-200/80 bg-white">
+        <div class="mx-auto max-w-6xl px-6 py-12">
+          <div class="text-center mb-8">
+            <div class="inline-flex items-center gap-2 rounded-full bg-brand-50 px-4 py-1.5 text-xs font-semibold text-brand-700 mb-3">Certifications</div>
+            <h2 class="text-xl font-extrabold text-slate-950">Quality you can verify</h2>
           </div>
+          <div class="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-5">
+            <div class="card-hover flex flex-col items-center rounded-2xl border border-slate-200 bg-slate-50 px-4 py-5 text-center">
+              <div class="flex h-10 w-10 items-center justify-center rounded-full bg-brand-600 text-white font-bold text-xs mb-2">ISO</div>
+              <div class="font-bold text-slate-900 text-sm">ISO 9001</div>
+              <div class="text-xs text-slate-500 mt-1">Quality Management</div>
+            </div>
+            <div class="card-hover flex flex-col items-center rounded-2xl border border-slate-200 bg-slate-50 px-4 py-5 text-center">
+              <div class="flex h-10 w-10 items-center justify-center rounded-full bg-brand-600 text-white font-bold text-xs mb-2">IATF</div>
+              <div class="font-bold text-slate-900 text-sm">IATF 16949</div>
+              <div class="text-xs text-slate-500 mt-1">Automotive Quality</div>
+            </div>
+            <div class="card-hover flex flex-col items-center rounded-2xl border border-slate-200 bg-slate-50 px-4 py-5 text-center">
+              <div class="flex h-10 w-10 items-center justify-center rounded-full bg-brand-600 text-white font-bold text-xs mb-2">AS</div>
+              <div class="font-bold text-slate-900 text-sm">AS9100D</div>
+              <div class="text-xs text-slate-500 mt-1">Aerospace Quality</div>
+            </div>
+            <div class="card-hover flex flex-col items-center rounded-2xl border border-slate-200 bg-slate-50 px-4 py-5 text-center">
+              <div class="flex h-10 w-10 items-center justify-center rounded-full bg-brand-600 text-white font-bold text-xs mb-2">ISO</div>
+              <div class="font-bold text-slate-900 text-sm">ISO 13485</div>
+              <div class="text-xs text-slate-500 mt-1">Medical Devices</div>
+            </div>
+            <div class="card-hover flex flex-col items-center rounded-2xl border border-slate-200 bg-slate-50 px-4 py-5 text-center">
+              <div class="flex h-10 w-10 items-center justify-center rounded-full bg-brand-600 text-white font-bold text-xs mb-2 text-[10px]">Nadcap</div>
+              <div class="font-bold text-slate-900 text-sm">Nadcap</div>
+              <div class="text-xs text-slate-500 mt-1">Aerospace Special Process</div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-          <div class="mx-auto mt-10 max-w-2xl rounded-3xl border border-slate-200 bg-slate-50 p-8 shadow-soft">
-            <form
-              name="quote"
-              method="POST"
-              action="/thanks"
-              data-netlify="true"
-              netlify-honeypot="bot-field"
-              class="grid gap-4"
-            >
-              <input type="hidden" name="form-name" value="quote" />
-              <p class="hidden">
-                <label>Don’t fill this out: <input name="bot-field" /></label>
+      <!-- WHY US -->
+      <section id="why-us" class="border-t border-slate-200/80 bg-[#f8fafc]">
+        <div class="mx-auto max-w-6xl px-6 py-20 md:py-24">
+          <div class="grid gap-14 md:grid-cols-2 md:items-start">
+            <div>
+              <div class="inline-flex items-center gap-2 rounded-full bg-brand-50 px-4 py-1.5 text-xs font-semibold text-brand-700 mb-4">Why Us</div>
+              <h2 class="text-3xl font-extrabold tracking-tight text-slate-950 md:text-4xl">A US-based partner who stays accountable, quote to delivery</h2>
+              <p class="mt-4 text-lg text-slate-500">
+                Our decentralized structure gives you a local team that takes full responsibility for your relationship — with the manufacturing depth of a global operation behind it.
               </p>
 
-              <div class="grid gap-4 md:grid-cols-2">
-                <label class="grid gap-2">
-                  <span class="text-sm font-semibold text-slate-900">Name</span>
-                  <input
-                    required
-                    name="name"
-                    autocomplete="name"
-                    class="w-full rounded-2xl border border-slate-300 bg-white px-4 py-3 text-slate-900 shadow-sm focus:outline-none focus:ring-2 focus:ring-slate-900/10"
-                    placeholder="Your name"
-                  />
-                </label>
-                <label class="grid gap-2">
-                  <span class="text-sm font-semibold text-slate-900">Company</span>
-                  <input
-                    name="company"
-                    autocomplete="organization"
-                    class="w-full rounded-2xl border border-slate-300 bg-white px-4 py-3 text-slate-900 shadow-sm focus:outline-none focus:ring-2 focus:ring-slate-900/10"
-                    placeholder="Company (optional)"
-                  />
-                </label>
-              </div>
-
-              <div class="grid gap-4 md:grid-cols-2">
-                <label class="grid gap-2">
-                  <span class="text-sm font-semibold text-slate-900">Email</span>
-                  <input
-                    required
-                    type="email"
-                    name="email"
-                    autocomplete="email"
-                    class="w-full rounded-2xl border border-slate-300 bg-white px-4 py-3 text-slate-900 shadow-sm focus:outline-none focus:ring-2 focus:ring-slate-900/10"
-                    placeholder="you@company.com"
-                  />
-                </label>
-                <label class="grid gap-2">
-                  <span class="text-sm font-semibold text-slate-900">Phone</span>
-                  <input
-                    name="phone"
-                    autocomplete="tel"
-                    class="w-full rounded-2xl border border-slate-300 bg-white px-4 py-3 text-slate-900 shadow-sm focus:outline-none focus:ring-2 focus:ring-slate-900/10"
-                    placeholder="(optional)"
-                  />
-                </label>
-              </div>
-
-              <label class="grid gap-2">
-                <span class="text-sm font-semibold text-slate-900">What do you need?</span>
-                <textarea
-                  required
-                  name="details"
-                  rows="6"
-                  class="w-full resize-y rounded-2xl border border-slate-300 bg-white px-4 py-3 text-slate-900 shadow-sm focus:outline-none focus:ring-2 focus:ring-slate-900/10"
-                  placeholder="Board type, layers, material, quantity, lead time target, impedance needs, and any QA requirements."
-                ></textarea>
-              </label>
-
-              <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-                <button
-                  type="submit"
-                  class="inline-flex items-center justify-center rounded-2xl bg-slate-900 px-6 py-3 text-base font-semibold text-white shadow-sm hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-slate-900/20"
-                >
-                  Submit request
-                </button>
-                <div class="text-sm text-slate-600">
-                  Prefer email? Send to
-                  <a class="font-semibold text-slate-900 underline" href="mailto:sales@example.com">sales@example.com</a>
+              <div class="mt-8 grid gap-3">
+                <div class="card-hover flex items-start gap-4 rounded-2xl border border-slate-200 bg-white p-5">
+                  <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-brand-600 text-white shadow-glow-sm">
+                    <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3 21l1.9-5.7a8.5 8.5 0 113.8 3.8z"/></svg>
+                  </span>
+                  <div>
+                    <div class="font-semibold text-slate-950">US-based, your timezone</div>
+                    <div class="mt-1 text-sm text-slate-500">Planning calls, fast decisions, and escalations handled without waiting for overseas business hours.</div>
+                  </div>
+                </div>
+                <div class="card-hover flex items-start gap-4 rounded-2xl border border-slate-200 bg-white p-5">
+                  <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-brand-600 text-white shadow-glow-sm">
+                    <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                  </span>
+                  <div>
+                    <div class="font-semibold text-slate-950">Single point of accountability</div>
+                    <div class="mt-1 text-sm text-slate-500">We own the communication loop — you don't chase updates across suppliers and time zones.</div>
+                  </div>
+                </div>
+                <div class="card-hover flex items-start gap-4 rounded-2xl border border-slate-200 bg-white p-5">
+                  <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-brand-600 text-white shadow-glow-sm">
+                    <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
+                  </span>
+                  <div>
+                    <div class="font-semibold text-slate-950">Enterprise-ready process</div>
+                    <div class="mt-1 text-sm text-slate-500">Documentation, revision control, and quality records that scale with your program.</div>
+                  </div>
+                </div>
+                <div class="card-hover flex items-start gap-4 rounded-2xl border border-slate-200 bg-white p-5">
+                  <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-brand-600 text-white shadow-glow-sm">
+                    <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+                  </span>
+                  <div>
+                    <div class="font-semibold text-slate-950">Long-term relationship</div>
+                    <div class="mt-1 text-sm text-slate-500">Customer satisfaction drives our operational excellence. We improve outcomes across every repeat order.</div>
+                  </div>
                 </div>
               </div>
-            </form>
+            </div>
 
-            <div class="mt-6 text-xs text-slate-500">
-              By submitting, you agree we may contact you about your request. No spam.
+            <div class="rounded-3xl border border-slate-200 bg-white p-8 shadow-soft">
+              <h3 class="text-lg font-bold text-slate-950">What you can expect</h3>
+              <div class="mt-6 space-y-0">
+                <div class="relative flex gap-4 pb-8 step-connector">
+                  <span class="relative z-10 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-brand-600 text-xs font-bold text-white shadow-glow-sm">1</span>
+                  <div class="pt-0.5">
+                    <div class="font-semibold text-slate-950">Clear specs intake</div>
+                    <div class="mt-1 text-sm text-slate-500">We ask the right questions upfront — board type, layers, material, impedance, quantity, lead time, and QA requirements — to eliminate rework.</div>
+                  </div>
+                </div>
+                <div class="relative flex gap-4 pb-8 step-connector">
+                  <span class="relative z-10 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-brand-600 text-xs font-bold text-white shadow-glow-sm">2</span>
+                  <div class="pt-0.5">
+                    <div class="font-semibold text-slate-950">Coordinated build</div>
+                    <div class="mt-1 text-sm text-slate-500">Our team collaborates with manufacturing and quality to satisfy all requirements. You get status updates and escalation when it matters.</div>
+                  </div>
+                </div>
+                <div class="relative flex gap-4">
+                  <span class="relative z-10 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-brand-600 text-xs font-bold text-white shadow-glow-sm">3</span>
+                  <div class="pt-0.5">
+                    <div class="font-semibold text-slate-950">Delivery to your dock</div>
+                    <div class="mt-1 text-sm text-slate-500">Logistics coordination, packaging, labeling, and incoming QA support — no surprises at receiving.</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mt-6 rounded-2xl border border-brand-100 bg-brand-50 p-5">
+                <div class="flex items-center gap-2 mb-2">
+                  <svg class="h-4 w-4 text-brand-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                  <div class="text-sm font-semibold text-brand-900">Sustainable &amp; enterprise-grade</div>
+                </div>
+                <div class="text-sm text-brand-700">
+                  We prioritize sustainable business growth alongside ESG responsibility — delivering operational excellence you can build a long-term supply chain on.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TESTIMONIAL -->
+      <section id="testimonial" class="border-t border-slate-200/80 bg-white">
+        <div class="mx-auto max-w-6xl px-6 py-20 md:py-24">
+          <div class="mx-auto max-w-2xl text-center mb-12">
+            <div class="inline-flex items-center gap-2 rounded-full bg-brand-50 px-4 py-1.5 text-xs font-semibold text-brand-700 mb-4">Client Feedback</div>
+            <h2 class="text-3xl font-extrabold tracking-tight text-slate-950 md:text-4xl">What our clients say</h2>
+          </div>
+
+          <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            <div class="card-hover col-span-full lg:col-span-2 rounded-3xl border border-slate-200 bg-slate-50 p-8 shadow-soft">
+              <div class="flex gap-1 mb-4">
+                <svg class="h-5 w-5 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg class="h-5 w-5 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg class="h-5 w-5 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg class="h-5 w-5 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg class="h-5 w-5 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              </div>
+              <blockquote class="text-lg text-slate-700 leading-relaxed italic">
+                "Boards arrived two days ahead of schedule. Impedance was spot-on, silkscreen clean, no lifted pads — our QA passed them first attempt. What I appreciated most was having someone in the US I could actually call when we hit a stackup question mid-build. That's rare."
+              </blockquote>
+              <div class="mt-5 flex items-center gap-3">
+                <div class="flex h-10 w-10 items-center justify-center rounded-full bg-brand-600 text-white font-bold text-sm">A</div>
+                <div>
+                  <div class="font-semibold text-slate-900 text-sm">Anastasia</div>
+                  <div class="text-xs text-slate-500">Hardware Engineer — Austin, TX</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card-hover rounded-3xl border border-brand-100 bg-gradient-to-b from-brand-50 to-white p-8 shadow-soft flex flex-col justify-between">
+              <div>
+                <div class="text-4xl font-black text-brand-600 mb-2">100+</div>
+                <div class="font-semibold text-slate-950">Global clients served</div>
+                <div class="mt-2 text-sm text-slate-500">Across 10+ major markets — from prototype to sustained production programs.</div>
+              </div>
+              <a href="#contact" class="mt-8 btn-primary inline-flex items-center justify-center rounded-xl px-5 py-3 text-sm font-semibold text-white focus:outline-none">
+                Become a client
+                <svg class="ml-1.5 h-4 w-4" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section id="contact" class="border-t border-slate-200/80 bg-[#f8fafc]">
+        <div class="mx-auto max-w-6xl px-6 py-20 md:py-24">
+          <div class="mx-auto max-w-2xl text-center">
+            <div class="inline-flex items-center gap-2 rounded-full bg-brand-50 px-4 py-1.5 text-xs font-semibold text-brand-700 mb-4">Contact</div>
+            <h2 class="text-3xl font-extrabold tracking-tight text-slate-950 md:text-4xl">Request a quote</h2>
+            <p class="mt-4 text-lg text-slate-500">No friction. We'll respond quickly from the US.</p>
+          </div>
+
+          <div class="mx-auto mt-12 max-w-2xl">
+            <div class="rounded-3xl border border-slate-200 bg-white p-8 shadow-soft">
+              <form name="quote" method="POST" action="/thanks" data-netlify="true" netlify-honeypot="bot-field" class="grid gap-5">
+                <input type="hidden" name="form-name" value="quote" />
+                <p class="hidden"><label>Don't fill this out: <input name="bot-field" /></label></p>
+
+                <div class="grid gap-5 md:grid-cols-2">
+                  <label class="grid gap-1.5">
+                    <span class="text-sm font-semibold text-slate-800">Name <span class="text-brand-500">*</span></span>
+                    <input required name="name" autocomplete="name"
+                      class="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-900 transition placeholder:text-slate-400 focus:border-brand-400 focus:bg-white focus:outline-none focus:ring-2 focus:ring-brand-500/20"
+                      placeholder="Your name" />
+                  </label>
+                  <label class="grid gap-1.5">
+                    <span class="text-sm font-semibold text-slate-800">Company</span>
+                    <input name="company" autocomplete="organization"
+                      class="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-900 transition placeholder:text-slate-400 focus:border-brand-400 focus:bg-white focus:outline-none focus:ring-2 focus:ring-brand-500/20"
+                      placeholder="Company (optional)" />
+                  </label>
+                </div>
+
+                <div class="grid gap-5 md:grid-cols-2">
+                  <label class="grid gap-1.5">
+                    <span class="text-sm font-semibold text-slate-800">Email <span class="text-brand-500">*</span></span>
+                    <input required type="email" name="email" autocomplete="email"
+                      class="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-900 transition placeholder:text-slate-400 focus:border-brand-400 focus:bg-white focus:outline-none focus:ring-2 focus:ring-brand-500/20"
+                      placeholder="you@company.com" />
+                  </label>
+                  <label class="grid gap-1.5">
+                    <span class="text-sm font-semibold text-slate-800">Phone</span>
+                    <input name="phone" autocomplete="tel"
+                      class="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-900 transition placeholder:text-slate-400 focus:border-brand-400 focus:bg-white focus:outline-none focus:ring-2 focus:ring-brand-500/20"
+                      placeholder="(optional)" />
+                  </label>
+                </div>
+
+                <label class="grid gap-1.5">
+                  <span class="text-sm font-semibold text-slate-800">What do you need? <span class="text-brand-500">*</span></span>
+                  <textarea required name="details" rows="5"
+                    class="w-full resize-y rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-900 transition placeholder:text-slate-400 focus:border-brand-400 focus:bg-white focus:outline-none focus:ring-2 focus:ring-brand-500/20"
+                    placeholder="Board type, layers, material, quantity, lead time target, impedance needs, PCBA requirements, and any QA or certification needs."></textarea>
+                </label>
+
+                <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+                  <button type="submit" class="btn-primary inline-flex items-center justify-center rounded-xl px-7 py-3.5 text-base font-semibold text-white focus:outline-none focus:ring-2 focus:ring-brand-500/40">
+                    Submit request
+                    <svg class="ml-2 h-4 w-4" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+                  </button>
+                  <div class="text-sm text-slate-500">
+                    Prefer email?
+                    <a class="font-semibold text-brand-600 hover:text-brand-700 underline underline-offset-2 transition-colors" href="mailto:sales@bridgepcb.com">sales@bridgepcb.com</a>
+                  </div>
+                </div>
+              </form>
+
+              <div class="mt-5 flex items-center gap-2 text-xs text-slate-400">
+                <svg class="h-3.5 w-3.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+                By submitting, you agree we may contact you about your request. No spam.
+              </div>
             </div>
           </div>
         </div>
       </section>
     </main>
 
-    <footer class="border-t border-slate-200 bg-white">
-      <div class="mx-auto max-w-6xl px-6 py-10">
-        <div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
-          <div class="text-sm text-slate-600">
-            <span class="font-semibold text-slate-900">Shengyi US PCB</span>
-            <span class="text-slate-400" aria-hidden="true">•</span>
-            US-based PCB sourcing partner powered by Shengyi
+    <footer class="border-t border-slate-200/80 bg-slate-950">
+      <div class="mx-auto max-w-6xl px-6 py-12">
+        <div class="grid gap-8 md:grid-cols-3 mb-10">
+          <div>
+            <div class="flex items-center gap-3 mb-3">
+              <svg aria-hidden="true" width="32" height="32" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="footerIconGrad" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0%" stop-color="#3b82f6"/>
+                    <stop offset="100%" stop-color="#1d4ed8"/>
+                  </linearGradient>
+                </defs>
+                <rect width="64" height="64" rx="14" fill="url(#footerIconGrad)"/>
+                <rect x="13" y="18" width="7" height="30" rx="2" fill="white"/>
+                <rect x="44" y="18" width="7" height="30" rx="2" fill="white"/>
+                <rect x="13" y="18" width="38" height="7" rx="2" fill="white"/>
+                <rect x="13" y="39" width="38" height="5" rx="1.5" fill="white" opacity="0.55"/>
+                <circle cx="16.5" cy="21.5" r="3.5" fill="#2563eb"/>
+                <circle cx="47.5" cy="21.5" r="3.5" fill="#2563eb"/>
+                <circle cx="16.5" cy="41.5" r="2.5" fill="#1d4ed8" opacity="0.8"/>
+                <circle cx="47.5" cy="41.5" r="2.5" fill="#1d4ed8" opacity="0.8"/>
+                <circle cx="32" cy="21.5" r="3" fill="#3b82f6"/>
+              </svg>
+              <div class="text-sm font-bold text-white">Bridge PCB</div>
+            </div>
+            <div class="text-sm text-slate-400 leading-relaxed">Your one-stop shop for PCB &amp; PCBA manufacturing excellence. US-based sourcing agent, backed by leading manufacturers in China.</div>
           </div>
-          <div class="text-sm text-slate-600">
-            © <span id="year"></span> Shengyi US PCB. All rights reserved.
+          <div>
+            <div class="text-xs font-bold uppercase tracking-wider text-slate-500 mb-3">Technology</div>
+            <ul class="space-y-2 text-sm text-slate-400">
+              <li><a href="#capabilities" class="hover:text-white transition-colors">Rigid PCB</a></li>
+              <li><a href="#capabilities" class="hover:text-white transition-colors">HDI PCB</a></li>
+              <li><a href="#capabilities" class="hover:text-white transition-colors">Flex &amp; Rigid-Flex</a></li>
+              <li><a href="#capabilities" class="hover:text-white transition-colors">Metal Substrate (IMS)</a></li>
+              <li><a href="#capabilities" class="hover:text-white transition-colors">PCBA</a></li>
+            </ul>
           </div>
+          <div>
+            <div class="text-xs font-bold uppercase tracking-wider text-slate-500 mb-3">Company</div>
+            <ul class="space-y-2 text-sm text-slate-400">
+              <li><a href="#services" class="hover:text-white transition-colors">Services</a></li>
+              <li><a href="#why-us" class="hover:text-white transition-colors">Why Us</a></li>
+              <li><a href="#testimonial" class="hover:text-white transition-colors">Clients</a></li>
+              <li><a href="#contact" class="hover:text-white transition-colors">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="border-t border-slate-800 pt-6 flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
+          <div class="text-sm text-slate-500">© <span id="year"></span> Bridge PCB. All rights reserved.</div>
+          <div class="text-sm text-slate-500">bridgepcb.com — US-based PCB sourcing agent</div>
         </div>
       </div>
     </footer>
 
     <script>
       document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+
+    <!-- ── Live Chat Widget ── -->
+    <!-- Netlify form registration (hidden, required for Netlify to detect the form) -->
+    <form name="chat" netlify netlify-honeypot="bot-field" hidden>
+      <input name="name" /><input name="email" /><input name="message" />
+    </form>
+
+    <style>
+      #chat-widget { position: fixed; bottom: 24px; right: 24px; z-index: 9999; font-family: Inter, ui-sans-serif, system-ui, sans-serif; }
+
+      #chat-bubble {
+        width: 56px; height: 56px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #2563eb, #1d4ed8);
+        box-shadow: 0 4px 20px rgba(37,99,235,.5);
+        display: flex; align-items: center; justify-content: center;
+        cursor: pointer;
+        transition: transform .2s ease, box-shadow .2s ease;
+        border: none; outline: none;
+      }
+      #chat-bubble:hover { transform: scale(1.08); box-shadow: 0 6px 28px rgba(37,99,235,.6); }
+      #chat-bubble svg { transition: transform .3s ease; }
+      #chat-bubble.open svg.icon-chat { display: none; }
+      #chat-bubble.open svg.icon-close { display: block !important; }
+
+      #chat-unread {
+        position: absolute; top: -3px; right: -3px;
+        width: 18px; height: 18px; border-radius: 50%;
+        background: #ef4444; border: 2px solid white;
+        font-size: 10px; font-weight: 700; color: white;
+        display: flex; align-items: center; justify-content: center;
+      }
+
+      #chat-panel {
+        position: absolute; bottom: 70px; right: 0;
+        width: 340px;
+        border-radius: 20px;
+        background: white;
+        box-shadow: 0 20px 60px rgba(0,0,0,.18);
+        overflow: hidden;
+        transform-origin: bottom right;
+        transform: scale(.92) translateY(12px);
+        opacity: 0;
+        pointer-events: none;
+        transition: transform .25s cubic-bezier(.34,1.56,.64,1), opacity .2s ease;
+      }
+      #chat-panel.open {
+        transform: scale(1) translateY(0);
+        opacity: 1;
+        pointer-events: all;
+      }
+
+      .chat-header {
+        background: linear-gradient(135deg, #2563eb, #1d4ed8);
+        padding: 16px 18px;
+        display: flex; align-items: center; gap: 12px;
+      }
+      .chat-avatar {
+        width: 40px; height: 40px; border-radius: 50%;
+        background: rgba(255,255,255,.2);
+        display: flex; align-items: center; justify-content: center;
+        font-weight: 800; font-size: 15px; color: white; flex-shrink: 0;
+      }
+      .chat-online-dot {
+        width: 9px; height: 9px; border-radius: 50%;
+        background: #4ade80; border: 2px solid white;
+        position: absolute; bottom: 1px; right: 1px;
+      }
+
+      .chat-body { padding: 16px 18px 0; max-height: 320px; overflow-y: auto; }
+      .chat-bubble-msg {
+        background: #f1f5f9; border-radius: 14px 14px 14px 4px;
+        padding: 10px 13px; font-size: 13.5px; color: #334155;
+        line-height: 1.5; margin-bottom: 8px; max-width: 90%;
+      }
+      .chat-bubble-msg + .chat-bubble-msg { margin-top: 4px; }
+      .chat-time { font-size: 11px; color: #94a3b8; margin-bottom: 14px; }
+
+      .chat-form { padding: 12px 18px 18px; }
+      .chat-form input, .chat-form textarea {
+        width: 100%; border: 1.5px solid #e2e8f0;
+        border-radius: 10px; padding: 9px 12px;
+        font-size: 13px; font-family: inherit; color: #0f172a;
+        background: #f8fafc; margin-bottom: 8px;
+        transition: border-color .15s, background .15s;
+        outline: none; box-sizing: border-box;
+      }
+      .chat-form input:focus, .chat-form textarea:focus {
+        border-color: #3b82f6; background: white;
+        box-shadow: 0 0 0 3px rgba(59,130,246,.12);
+      }
+      .chat-form textarea { resize: none; height: 72px; }
+      .chat-send-btn {
+        width: 100%; padding: 10px;
+        background: linear-gradient(135deg, #2563eb, #1d4ed8);
+        color: white; font-weight: 700; font-size: 14px;
+        border: none; border-radius: 10px; cursor: pointer;
+        box-shadow: 0 4px 12px rgba(37,99,235,.35);
+        transition: opacity .2s, transform .15s;
+      }
+      .chat-send-btn:hover { opacity: .92; transform: translateY(-1px); }
+      .chat-send-btn:disabled { opacity: .6; cursor: not-allowed; transform: none; }
+
+      .chat-success {
+        padding: 28px 18px;
+        text-align: center;
+        display: none;
+      }
+      .chat-success-icon {
+        width: 48px; height: 48px; border-radius: 50%;
+        background: #dcfce7; margin: 0 auto 12px;
+        display: flex; align-items: center; justify-content: center;
+      }
+    </style>
+
+    <div id="chat-widget">
+      <!-- Unread badge -->
+      <div id="chat-unread">1</div>
+
+      <!-- Chat panel -->
+      <div id="chat-panel" role="dialog" aria-label="Live chat">
+        <!-- Header -->
+        <div class="chat-header">
+          <div style="position:relative">
+            <div class="chat-avatar">B</div>
+            <div class="chat-online-dot"></div>
+          </div>
+          <div>
+            <div style="font-weight:700;color:white;font-size:14px">Bridge PCB</div>
+            <div style="font-size:12px;color:rgba(255,255,255,.75);display:flex;align-items:center;gap:5px">
+              <span style="width:6px;height:6px;border-radius:50%;background:#4ade80;display:inline-block"></span>
+              Online now · typically replies in minutes
+            </div>
+          </div>
+        </div>
+
+        <!-- Messages -->
+        <div class="chat-body">
+          <div class="chat-bubble-msg">Hi there! 👋 Have a PCB or PCBA project in mind?</div>
+          <div class="chat-bubble-msg">Drop your details below and we'll get back to you fast — usually within the hour during business hours.</div>
+          <div class="chat-time">Bridge PCB · just now</div>
+        </div>
+
+        <!-- Form -->
+        <div class="chat-form">
+          <form id="chat-form-el" novalidate>
+            <input type="hidden" name="form-name" value="chat" />
+            <p style="display:none"><input name="bot-field" /></p>
+            <input name="name" type="text" placeholder="Your name" required autocomplete="name" />
+            <input name="email" type="email" placeholder="Email address" required autocomplete="email" />
+            <textarea name="message" placeholder="What are you working on? (board type, layers, quantity...)" required></textarea>
+            <button type="submit" class="chat-send-btn">Send message →</button>
+          </form>
+
+          <div class="chat-success" id="chat-success">
+            <div class="chat-success-icon">
+              <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="#16a34a" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+            </div>
+            <div style="font-weight:700;color:#0f172a;font-size:15px">Message sent!</div>
+            <div style="font-size:13px;color:#64748b;margin-top:4px">We'll reply to your email shortly.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bubble toggle button -->
+      <button id="chat-bubble" aria-label="Open live chat" aria-expanded="false">
+        <svg class="icon-chat" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="white" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+        <svg class="icon-close" width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="white" stroke-width="2.5" style="display:none"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+    </div>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+
+      (function() {
+        const bubble = document.getElementById("chat-bubble");
+        const panel  = document.getElementById("chat-panel");
+        const unread = document.getElementById("chat-unread");
+        const form   = document.getElementById("chat-form-el");
+        const success = document.getElementById("chat-success");
+
+        bubble.addEventListener("click", function() {
+          const isOpen = panel.classList.toggle("open");
+          bubble.classList.toggle("open", isOpen);
+          bubble.setAttribute("aria-expanded", isOpen);
+          if (isOpen) unread.style.display = "none";
+        });
+
+        // Close when clicking outside
+        document.addEventListener("click", function(e) {
+          if (!document.getElementById("chat-widget").contains(e.target)) {
+            panel.classList.remove("open");
+            bubble.classList.remove("open");
+            bubble.setAttribute("aria-expanded", "false");
+          }
+        });
+
+        // Submit via fetch to Netlify
+        form.addEventListener("submit", async function(e) {
+          e.preventDefault();
+          const btn = form.querySelector("button[type=submit]");
+          btn.disabled = true;
+          btn.textContent = "Sending…";
+
+          try {
+            const data = new FormData(form);
+            data.set("form-name", "chat");
+            await fetch("/", { method: "POST", body: data });
+            form.style.display = "none";
+            success.style.display = "block";
+          } catch (_) {
+            btn.disabled = false;
+            btn.textContent = "Send message →";
+            alert("Something went wrong — please email sales@bridgepcb.com directly.");
+          }
+        });
+      })();
     </script>
   </body>
 </html>
