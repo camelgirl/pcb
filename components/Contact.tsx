@@ -1,8 +1,10 @@
 "use client";
 
 import { useState, FormEvent } from "react";
+import { useRouter } from "next/navigation";
 
 export default function Contact() {
+  const router = useRouter();
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
 
@@ -12,8 +14,20 @@ export default function Contact() {
     const form = e.currentTarget;
     const data = new FormData(form);
     try {
-      await fetch("/", { method: "POST", body: data });
+      const params = new URLSearchParams();
+      data.forEach((value, key) => {
+        params.append(key, String(value));
+      });
+
+      // Netlify Forms needs a static HTML target under `public/`.
+      await fetch("/__forms.html", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: params.toString(),
+      });
+
       setSubmitted(true);
+      router.push("/thanks");
     } catch {
       setSubmitting(false);
       alert("Something went wrong — please email sales@bridgepcb.com directly.");
@@ -59,9 +73,6 @@ export default function Contact() {
               <form
                 name="quote"
                 method="POST"
-                action="/thanks"
-                data-netlify="true"
-                netlify-honeypot="bot-field"
                 className="grid gap-5"
                 onSubmit={handleSubmit}
               >

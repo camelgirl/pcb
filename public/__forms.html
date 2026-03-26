@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body>
+    <!--
+      Static file used by Netlify Forms deploy-time detection.
+      Next.js doesn't emit fully static HTML for app routes, so we mirror the
+      form schema here and submit to this endpoint from the React component.
+    -->
+    <form name="quote" data-netlify="true" hidden>
+      <input type="hidden" name="form-name" value="quote" />
+      <input type="text" name="name" />
+      <input type="text" name="company" />
+      <input type="email" name="email" />
+      <input type="text" name="phone" />
+      <input type="text" name="details" />
+      <!-- Honeypot (must match netlify field name used by your form) -->
+      <input type="text" name="bot-field" />
+    </form>
+  </body>
+</html>
+
