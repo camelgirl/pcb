@@ -11,6 +11,11 @@ html { scroll-behavior: smooth; }
   --border-medium: rgba(212,168,83,0.25);
   --bg-surface: #111113;
   --bg-elevated: #1c1c20;
+
+  /* Font fallbacks to avoid build-time downloads */
+  --font-display: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  --font-sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
 /* Circuit grid background */
