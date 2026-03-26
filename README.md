@@ -1,20 +1,19 @@
-# Shengyi US PCB — Netlify site
+# Bridge PCB — React/Next site on Netlify
 
-This repo is a simple static website designed to deploy on Netlify.
+This is a React/Next.js marketing site deployed on Netlify.
 
 ## Local preview
 
-Open `index.html` in a browser, or run a quick local server:
-
 ```bash
-python3 -m http.server 5173
+npm install
+npm run dev
 ```
 
-Then visit `http://localhost:5173`.
+Then visit `http://localhost:3000`.
 
 ## Netlify deployment
 
-- Build command: *(none)*
-- Publish directory: `.`
+- Build command: `npm run build`
+- Publish directory: `.next`
 
-The quote form in `index.html` uses **Netlify Forms** (`name="quote"` + `data-netlify="true"`).
+The contact form in `components/Contact.tsx` uses **Netlify Forms** (`name="quote"` + `data-netlify="true"`).
