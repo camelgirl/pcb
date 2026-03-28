@@ -14,22 +14,6 @@ function CheckIcon() {
   );
 }
 
-function CheckIconWhite() {
-  return (
-    <span className="flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-white/20">
-      <svg
-        className="h-2.5 w-2.5 text-white"
-        fill="none"
-        viewBox="0 0 10 10"
-        stroke="currentColor"
-        strokeWidth="2.5"
-      >
-        <path d="M1.5 5l2.5 2.5 4.5-4.5" />
-      </svg>
-    </span>
-  );
-}
-
 export default function Services() {
   return (
     <section id="services" className="relative bg-[#09090b]">
@@ -102,7 +86,7 @@ export default function Services() {
 
           {/* Card 2 (highlighted) */}
           <div className="rounded-2xl bg-gradient-to-br from-[#1e1608] to-[#120f04] border border-copper-600/30 shadow-copper p-7 flex flex-col transition-transform duration-200 hover:-translate-y-1">
-            <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-copper-900/40 backdrop-blur-sm mb-5">
+            <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-copper-500 to-copper-700 shadow-copper-sm mb-5">
               <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24">
                 <rect
                   x="3"
@@ -110,9 +94,9 @@ export default function Services() {
                   width="18"
                   height="3"
                   rx="1"
-                  fill="#d4a853"
+                  fill="white"
                   fillOpacity="0.2"
-                  stroke="#d4a853"
+                  stroke="white"
                   strokeWidth="1.3"
                 />
                 <rect
@@ -121,9 +105,9 @@ export default function Services() {
                   width="18"
                   height="3"
                   rx="1"
-                  fill="#d4a853"
+                  fill="white"
                   fillOpacity="0.38"
-                  stroke="#d4a853"
+                  stroke="white"
                   strokeWidth="1.3"
                 />
                 <rect
@@ -132,20 +116,20 @@ export default function Services() {
                   width="18"
                   height="3"
                   rx="1"
-                  fill="#d4a853"
+                  fill="white"
                   fillOpacity="0.6"
-                  stroke="#d4a853"
+                  stroke="white"
                   strokeWidth="1.3"
                 />
                 <path
                   d="M8 5.5v13M16 5.5v13"
-                  stroke="#d4a853"
+                  stroke="white"
                   strokeWidth="1"
                   strokeDasharray="1.5 1.5"
                   opacity="0.45"
                 />
-                <circle cx="8" cy="7" r="1.1" fill="#d4a853" />
-                <circle cx="16" cy="7" r="1.1" fill="#d4a853" />
+                <circle cx="8" cy="7" r="1.1" fill="white" />
+                <circle cx="16" cy="7" r="1.1" fill="white" />
               </svg>
             </div>
             <h3 className="font-display text-base font-bold text-zinc-100">
