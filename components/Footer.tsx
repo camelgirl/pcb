@@ -24,12 +24,22 @@ export default function Footer() {
             <ul className="space-y-2">
               <li>
                 <a href="#capabilities" className="text-sm text-zinc-500 hover:text-copper-400 transition-colors">
-                  Rigid PCB
+                  Rigid PCB — Line Cards
                 </a>
               </li>
               <li>
                 <a href="#capabilities" className="text-sm text-zinc-500 hover:text-copper-400 transition-colors">
-                  HDI PCB
+                  Backplane
+                </a>
+              </li>
+              <li>
+                <a href="#capabilities" className="text-sm text-zinc-500 hover:text-copper-400 transition-colors">
+                  Server / HPC
+                </a>
+              </li>
+              <li>
+                <a href="#capabilities" className="text-sm text-zinc-500 hover:text-copper-400 transition-colors">
+                  HDI
                 </a>
               </li>
               <li>
@@ -39,7 +49,7 @@ export default function Footer() {
               </li>
               <li>
                 <a href="#capabilities" className="text-sm text-zinc-500 hover:text-copper-400 transition-colors">
-                  Metal Substrate (IMS)
+                  Specialty — Metal (IMS), Embedded Coin, Optical
                 </a>
               </li>
               <li>

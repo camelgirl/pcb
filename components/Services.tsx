@@ -102,7 +102,7 @@ export default function Services() {
 
           {/* Card 2 (highlighted) */}
           <div className="rounded-2xl bg-gradient-to-br from-[#1e1608] to-[#120f04] border border-copper-600/30 shadow-copper p-7 flex flex-col transition-transform duration-200 hover:-translate-y-1">
-            <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white/15 backdrop-blur-sm mb-5">
+            <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-copper-900/40 backdrop-blur-sm mb-5">
               <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24">
                 <rect
                   x="3"
@@ -110,9 +110,9 @@ export default function Services() {
                   width="18"
                   height="3"
                   rx="1"
-                  fill="white"
+                  fill="#d4a853"
                   fillOpacity="0.2"
-                  stroke="white"
+                  stroke="#d4a853"
                   strokeWidth="1.3"
                 />
                 <rect
@@ -121,9 +121,9 @@ export default function Services() {
                   width="18"
                   height="3"
                   rx="1"
-                  fill="white"
+                  fill="#d4a853"
                   fillOpacity="0.38"
-                  stroke="white"
+                  stroke="#d4a853"
                   strokeWidth="1.3"
                 />
                 <rect
@@ -132,40 +132,40 @@ export default function Services() {
                   width="18"
                   height="3"
                   rx="1"
-                  fill="white"
+                  fill="#d4a853"
                   fillOpacity="0.6"
-                  stroke="white"
+                  stroke="#d4a853"
                   strokeWidth="1.3"
                 />
                 <path
                   d="M8 5.5v13M16 5.5v13"
-                  stroke="white"
+                  stroke="#d4a853"
                   strokeWidth="1"
                   strokeDasharray="1.5 1.5"
                   opacity="0.45"
                 />
-                <circle cx="8" cy="7" r="1.1" fill="white" />
-                <circle cx="16" cy="7" r="1.1" fill="white" />
+                <circle cx="8" cy="7" r="1.1" fill="#d4a853" />
+                <circle cx="16" cy="7" r="1.1" fill="#d4a853" />
               </svg>
             </div>
             <h3 className="font-display text-base font-bold text-zinc-100">
               Reliable PCBs — Standard &amp; Complex
             </h3>
-            <p className="mt-2 font-sans text-sm text-copper-200/70 leading-relaxed flex-1">
+            <p className="mt-2 font-sans text-sm text-zinc-400 leading-relaxed flex-1">
               From simple 2-layer boards to 46-layer HDI, Flex, Rigid-Flex, and specialty
               substrates — we source the right board for your design.
             </p>
             <ul className="mt-4 space-y-2">
-              <li className="flex items-center gap-2 text-xs text-copper-200/70">
-                <CheckIconWhite />
+              <li className="flex items-center gap-2 text-xs text-zinc-400">
+                <CheckIcon />
                 2L–46L, HDI (AnyLayer, 3+N+3)
               </li>
-              <li className="flex items-center gap-2 text-xs text-copper-200/70">
-                <CheckIconWhite />
+              <li className="flex items-center gap-2 text-xs text-zinc-400">
+                <CheckIcon />
                 Flex, Rigid-Flex, Metal (IMS)
               </li>
-              <li className="flex items-center gap-2 text-xs text-copper-200/70">
-                <CheckIconWhite />
+              <li className="flex items-center gap-2 text-xs text-zinc-400">
+                <CheckIcon />
                 PCBA turnkey available
               </li>
             </ul>
