@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 64" fill="none" role="img" aria-label="Bridge PCB logo">
+  <defs>
+    <linearGradient id="iconGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#3b82f6"/>
+      <stop offset="100%" stop-color="#1d4ed8"/>
+    </linearGradient>
+    <linearGradient id="glowGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#60a5fa" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#1d4ed8" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- ── Icon mark ── -->
+  <!-- Rounded square bg -->
+  <rect x="0" y="0" width="64" height="64" rx="14" fill="url(#iconGrad)"/>
+  <!-- Subtle inner glow -->
+  <rect x="0" y="0" width="64" height="32" rx="14" fill="url(#glowGrad)"/>
+
+  <!-- PCB Bridge trace (white) -->
+  <!-- Left tower -->
+  <rect x="13" y="18" width="7" height="30" rx="2" fill="white"/>
+  <!-- Right tower -->
+  <rect x="44" y="18" width="7" height="30" rx="2" fill="white"/>
+  <!-- Top span -->
+  <rect x="13" y="18" width="38" height="7" rx="2" fill="white"/>
+  <!-- Mid deck (slightly transparent) -->
+  <rect x="13" y="39" width="38" height="5" rx="1.5" fill="white" opacity="0.55"/>
+
+  <!-- Vias (punched through) at top corners -->
+  <circle cx="16.5" cy="21.5" r="3.5" fill="#2563eb"/>
+  <circle cx="47.5" cy="21.5" r="3.5" fill="#2563eb"/>
+  <!-- Vias at deck corners -->
+  <circle cx="16.5" cy="41.5" r="2.5" fill="#1d4ed8" opacity="0.8"/>
+  <circle cx="47.5" cy="41.5" r="2.5" fill="#1d4ed8" opacity="0.8"/>
+  <!-- Centre via on top span -->
+  <circle cx="32" cy="21.5" r="3" fill="#3b82f6"/>
+
+  <!-- ── Wordmark ── -->
+  <!-- "Bridge" — uses system sans; embed Inter via CSS when used on web -->
+  <text
+    x="80" y="38"
+    font-family="Inter, ui-sans-serif, system-ui, -apple-system, sans-serif"
+    font-weight="800"
+    font-size="26"
+    letter-spacing="-0.5"
+    fill="#0f172a"
+  >Bridge</text>
+
+  <!-- "PCB" pill badge -->
+  <rect x="80" y="46" width="46" height="14" rx="4" fill="#eff6ff"/>
+  <text
+    x="103" y="57"
+    font-family="Inter, ui-sans-serif, system-ui, -apple-system, sans-serif"
+    font-weight="700"
+    font-size="9.5"
+    letter-spacing="2.5"
+    fill="#2563eb"
+    text-anchor="middle"
+  >PCB</text>
+</svg>
