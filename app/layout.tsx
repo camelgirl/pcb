@@ -25,9 +25,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body
-        className="bg-[#09090b] text-zinc-200 font-sans antialiased"
-      >
+      <head>
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-L9QB4WJEMV"
           strategy="afterInteractive"
@@ -40,8 +38,8 @@ export default function RootLayout({
             gtag('config', 'G-L9QB4WJEMV');
           `}
         </Script>
-        {children}
-      </body>
+      </head>
+      <body className="bg-[#09090b] text-zinc-200 font-sans antialiased">{children}</body>
     </html>
   );
 }
