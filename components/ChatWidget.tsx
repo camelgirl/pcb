@@ -34,7 +34,16 @@ export default function ChatWidget() {
     const data = new FormData(form);
     data.set("form-name", "chat");
     try {
-      await fetch("/", { method: "POST", body: data });
+      const params = new URLSearchParams();
+      data.forEach((value, key) => {
+        params.append(key, String(value));
+      });
+      await fetch("/__forms.html", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: params.toString(),
+      });
+      setSubmitting(false);
       setSubmitted(true);
     } catch {
       setSubmitting(false);
@@ -44,13 +53,6 @@ export default function ChatWidget() {
 
   return (
     <>
-      {/* Hidden Netlify form registration */}
-      <form name="chat" data-netlify="true" netlify-honeypot="bot-field" hidden>
-        <input name="name" />
-        <input name="email" />
-        <input name="message" />
-      </form>
-
       <style>{`
         #chat-widget {
           position: fixed;
