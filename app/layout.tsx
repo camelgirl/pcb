@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Script from "next/script";
 import "./globals.css";
+import AnalyticsClickTracker from "@/components/AnalyticsClickTracker";
 
 export const metadata: Metadata = {
   icons: {
@@ -39,7 +40,10 @@ export default function RootLayout({
           `}
         </Script>
       </head>
-      <body className="bg-[#09090b] text-zinc-200 font-sans antialiased">{children}</body>
+      <body className="bg-[#09090b] text-zinc-200 font-sans antialiased">
+        <AnalyticsClickTracker />
+        {children}
+      </body>
     </html>
   );
 }
