@@ -7,7 +7,7 @@ export default function Capabilities() {
             PCB Technologies
           </div>
           <h2 className="font-display text-4xl font-bold tracking-tight text-zinc-100">
-            Broad technology range,
+            PCB manufacturing capabilities,
             <br />
             delivered reliably
           </h2>

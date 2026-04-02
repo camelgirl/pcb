@@ -24,7 +24,7 @@ export default function Services() {
             What We Offer
           </div>
           <h2 className="font-display text-4xl font-bold tracking-tight text-zinc-100">
-            Innovative products and services
+            PCB &amp; PCBA services
             <br />
             from concept to creation
           </h2>

@@ -4,18 +4,30 @@ import "./globals.css";
 import AnalyticsClickTracker from "@/components/AnalyticsClickTracker";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://bridgepcb.com"),
   icons: {
     icon: [{ url: "/logo.svg", type: "image/svg+xml" }],
     apple: "/logo.svg",
   },
-  title: "Bridge PCB — Your One-Stop Shop for PCB & PCBA Manufacturing",
+  title: "PCB & PCBA Manufacturing | Bridge PCB — US-Based Sourcing Agent",
   description:
-    "US-based PCB & PCBA sourcing agent backed by leading manufacturers in China. From concept to creation — technical support, manufacturing coordination, QA, and logistics with fast US communication.",
+    "US-based PCB & PCBA sourcing agent backed by leading manufacturers in China. Technical support, manufacturing coordination, QA, and logistics — 2L to 46L, HDI, Flex, Rigid-Flex, and PCBA.",
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
-    title: "Bridge PCB — Your One-Stop Shop for PCB & PCBA Manufacturing",
+    title: "PCB & PCBA Manufacturing | Bridge PCB — US-Based Sourcing Agent",
     description:
-      "US-based PCB & PCBA sourcing agent backed by leading manufacturers in China. From concept to creation.",
+      "US-based PCB & PCBA sourcing agent backed by leading manufacturers in China. Technical support, manufacturing coordination, QA, and logistics — 2L to 46L, HDI, Flex, Rigid-Flex, and PCBA.",
+    url: "https://bridgepcb.com",
+    siteName: "Bridge PCB",
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PCB & PCBA Manufacturing | Bridge PCB — US-Based Sourcing Agent",
+    description:
+      "US-based PCB & PCBA sourcing agent backed by leading manufacturers in China. 2L–46L, HDI, Flex, Rigid-Flex, PCBA.",
   },
 };
 
@@ -41,6 +53,40 @@ export default function RootLayout({
         </Script>
       </head>
       <body className="bg-[#09090b] text-zinc-200 font-sans antialiased">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "ProfessionalService",
+              name: "Bridge PCB",
+              url: "https://bridgepcb.com",
+              description:
+                "US-based PCB & PCBA sourcing agent backed by leading manufacturers in China. Technical support, manufacturing coordination, QA, and logistics.",
+              areaServed: {
+                "@type": "Country",
+                name: "United States",
+              },
+              serviceType: [
+                "PCB Manufacturing",
+                "PCBA Manufacturing",
+                "PCB Sourcing",
+                "HDI PCB",
+                "Flex PCB",
+                "Rigid-Flex PCB",
+              ],
+              knowsAbout: [
+                "Printed Circuit Board Manufacturing",
+                "PCB Assembly",
+                "HDI PCB",
+                "Flex PCB",
+                "Rigid-Flex PCB",
+                "Backplane PCB",
+                "PCB Design for Manufacturing",
+              ],
+            }),
+          }}
+        />
         <AnalyticsClickTracker />
         {children}
       </body>
