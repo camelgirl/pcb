@@ -190,6 +190,7 @@ export default function Capabilities() {
           >
             Send an RFQ
             <svg
+              aria-hidden="true"
               className="ml-1.5 h-4 w-4"
               viewBox="0 0 16 16"
               fill="none"

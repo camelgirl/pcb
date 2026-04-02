@@ -1,6 +1,6 @@
 function VerifiedCheckIcon() {
   return (
-    <svg className="h-3 w-3" fill="currentColor" viewBox="0 0 12 12">
+    <svg aria-hidden="true" className="h-3 w-3" fill="currentColor" viewBox="0 0 12 12">
       <path d="M10.5 2.5L5 8.5 2 5.5l-1 1L5 10.5l6.5-7-1-1z" />
     </svg>
   );
@@ -37,7 +37,7 @@ export default function Certifications() {
         </div>
 
         {/* Shared SVG defs for shield gradient */}
-        <svg width="0" height="0" style={{ position: "absolute" }}>
+        <svg aria-hidden="true" width="0" height="0" style={{ position: "absolute" }}>
           <defs>
             <linearGradient id="certCopperG" x1="0" y1="0" x2="0" y2="1">
               <stop offset="0%" stopColor="#d4a853" />
@@ -49,7 +49,7 @@ export default function Certifications() {
         <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-5">
           {/* ISO 9001 */}
           <div className="card-dark flex flex-col items-center rounded-xl px-4 py-6 text-center">
-            <svg width="44" height="50" viewBox="0 0 44 50" fill="none" className="mb-3">
+            <svg aria-hidden="true" width="44" height="50" viewBox="0 0 44 50" fill="none" className="mb-3">
               {shieldBase}
               <text
                 x="22"
@@ -87,7 +87,7 @@ export default function Certifications() {
 
           {/* IATF 16949 */}
           <div className="card-dark flex flex-col items-center rounded-xl px-4 py-6 text-center">
-            <svg width="44" height="50" viewBox="0 0 44 50" fill="none" className="mb-3">
+            <svg aria-hidden="true" width="44" height="50" viewBox="0 0 44 50" fill="none" className="mb-3">
               {shieldBase}
               <text
                 x="22"
@@ -125,7 +125,7 @@ export default function Certifications() {
 
           {/* AS9100D */}
           <div className="card-dark flex flex-col items-center rounded-xl px-4 py-6 text-center">
-            <svg width="44" height="50" viewBox="0 0 44 50" fill="none" className="mb-3">
+            <svg aria-hidden="true" width="44" height="50" viewBox="0 0 44 50" fill="none" className="mb-3">
               {shieldBase}
               <text
                 x="22"
@@ -163,7 +163,7 @@ export default function Certifications() {
 
           {/* ISO 13485 */}
           <div className="card-dark flex flex-col items-center rounded-xl px-4 py-6 text-center">
-            <svg width="44" height="50" viewBox="0 0 44 50" fill="none" className="mb-3">
+            <svg aria-hidden="true" width="44" height="50" viewBox="0 0 44 50" fill="none" className="mb-3">
               {shieldBase}
               <text
                 x="22"
@@ -201,7 +201,7 @@ export default function Certifications() {
 
           {/* Nadcap */}
           <div className="card-dark flex flex-col items-center rounded-xl px-4 py-6 text-center">
-            <svg width="44" height="50" viewBox="0 0 44 50" fill="none" className="mb-3">
+            <svg aria-hidden="true" width="44" height="50" viewBox="0 0 44 50" fill="none" className="mb-3">
               {shieldBase}
               <path
                 d="M16 24l3.5-9 2.5 6 2-4 2 7"

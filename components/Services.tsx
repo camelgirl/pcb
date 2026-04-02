@@ -2,6 +2,7 @@ function CheckIcon() {
   return (
     <span className="flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-copper-900/40 border border-copper-700/30">
       <svg
+        aria-hidden="true"
         className="h-2.5 w-2.5 text-copper-400"
         fill="none"
         viewBox="0 0 10 10"
@@ -38,7 +39,7 @@ export default function Services() {
           {/* Card 1 */}
           <div className="card-dark rounded-2xl p-7 flex flex-col">
             <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-copper-500 to-copper-700 shadow-copper-sm mb-5">
-              <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24">
+              <svg aria-hidden="true" className="h-6 w-6" fill="none" viewBox="0 0 24 24">
                 <rect
                   x="7"
                   y="7"
@@ -87,7 +88,7 @@ export default function Services() {
           {/* Card 2 (highlighted) */}
           <div className="rounded-2xl bg-gradient-to-br from-[#1e1608] to-[#120f04] border border-copper-600/30 shadow-copper p-7 flex flex-col transition-transform duration-200 hover:-translate-y-1">
             <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-copper-500 to-copper-700 shadow-copper-sm mb-5">
-              <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24">
+              <svg aria-hidden="true" className="h-6 w-6" fill="none" viewBox="0 0 24 24">
                 <rect
                   x="3"
                   y="15.5"
@@ -158,7 +159,7 @@ export default function Services() {
           {/* Card 3 */}
           <div className="card-dark rounded-2xl p-7 flex flex-col">
             <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-copper-500 to-copper-700 shadow-copper-sm mb-5">
-              <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24">
+              <svg aria-hidden="true" className="h-6 w-6" fill="none" viewBox="0 0 24 24">
                 <path
                   d="M2 21V9.5L8 5.5l6 4V21H2z"
                   fill="white"
@@ -211,7 +212,7 @@ export default function Services() {
           {/* Card 4 */}
           <div className="card-dark rounded-2xl p-7 flex flex-col">
             <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-copper-500 to-copper-700 shadow-copper-sm mb-5">
-              <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24">
+              <svg aria-hidden="true" className="h-6 w-6" fill="none" viewBox="0 0 24 24">
                 <path
                   d="M12 21.5L3 9.5 6.5 3.5h11L21 9.5 12 21.5z"
                   fill="white"

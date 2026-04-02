@@ -21,6 +21,7 @@ export default function WhyUs() {
                 <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-copper-600 text-white shadow-copper-sm">
                   <svg
                     className="h-4 w-4"
+                    aria-hidden="true"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -47,6 +48,7 @@ export default function WhyUs() {
                 <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-copper-600 text-white shadow-copper-sm">
                   <svg
                     className="h-4 w-4"
+                    aria-hidden="true"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -73,6 +75,7 @@ export default function WhyUs() {
                 <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-copper-600 text-white shadow-copper-sm">
                   <svg
                     className="h-4 w-4"
+                    aria-hidden="true"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -99,6 +102,7 @@ export default function WhyUs() {
                 <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-copper-600 text-white shadow-copper-sm">
                   <svg
                     className="h-4 w-4"
+                    aria-hidden="true"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -166,6 +170,7 @@ export default function WhyUs() {
             <div className="mt-6 bg-[#1a1408] border border-copper-800/30 rounded-xl p-5">
               <div className="flex items-center gap-2 mb-2">
                 <svg
+                  aria-hidden="true"
                   className="h-4 w-4 text-copper-400"
                   fill="none"
                   viewBox="0 0 24 24"

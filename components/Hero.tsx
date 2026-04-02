@@ -40,6 +40,7 @@ export default function Hero() {
               >
                 Contact us
                 <svg
+                  aria-hidden="true"
                   className="ml-2 h-4 w-4"
                   viewBox="0 0 16 16"
                   fill="none"
@@ -63,6 +64,7 @@ export default function Hero() {
                 <div className="flex items-center gap-2 mb-2">
                   <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-copper-500 to-copper-700 shadow-copper-sm">
                     <svg
+                      aria-hidden="true"
                       className="h-4 w-4 text-white"
                       fill="none"
                       viewBox="0 0 24 24"
@@ -86,6 +88,7 @@ export default function Hero() {
                 <div className="flex items-center gap-2 mb-2">
                   <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-copper-500 to-copper-700 shadow-copper-sm">
                     <svg
+                      aria-hidden="true"
                       className="h-4 w-4 text-white"
                       fill="none"
                       viewBox="0 0 24 24"
@@ -109,6 +112,7 @@ export default function Hero() {
                 <div className="flex items-center gap-2 mb-2">
                   <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-copper-500 to-copper-700 shadow-copper-sm">
                     <svg
+                      aria-hidden="true"
                       className="h-4 w-4 text-white"
                       fill="none"
                       viewBox="0 0 24 24"

@@ -20,7 +20,7 @@ export default function Industries() {
           {/* Communication */}
           <div className="card-dark rounded-2xl p-7">
             <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-copper-500 to-copper-700 shadow-copper-sm mb-5">
-              <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24">
+              <svg aria-hidden="true" className="h-6 w-6" fill="none" viewBox="0 0 24 24">
                 <path
                   d="M5 8.5a9 9 0 0114 0"
                   stroke="white"
@@ -67,7 +67,7 @@ export default function Industries() {
           {/* Servers / HPC */}
           <div className="card-dark rounded-2xl p-7">
             <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-copper-500 to-copper-700 shadow-copper-sm mb-5">
-              <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24">
+              <svg aria-hidden="true" className="h-6 w-6" fill="none" viewBox="0 0 24 24">
                 <rect
                   x="2"
                   y="3"
@@ -134,7 +134,7 @@ export default function Industries() {
           {/* Automotive */}
           <div className="card-dark rounded-2xl p-7">
             <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-copper-500 to-copper-700 shadow-copper-sm mb-5">
-              <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24">
+              <svg aria-hidden="true" className="h-6 w-6" fill="none" viewBox="0 0 24 24">
                 <path
                   d="M5 17.5V13.5L7.5 8h9l2.5 5.5v4H5z"
                   fill="white"
@@ -201,7 +201,7 @@ export default function Industries() {
           {/* Aerospace */}
           <div className="card-dark rounded-2xl p-7">
             <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-copper-500 to-copper-700 shadow-copper-sm mb-5">
-              <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24">
+              <svg aria-hidden="true" className="h-6 w-6" fill="none" viewBox="0 0 24 24">
                 <path
                   d="M12 2c-2.8 3.5-3.5 7.5-3.5 10h7C15.5 9.5 14.8 5.5 12 2z"
                   fill="white"
@@ -267,7 +267,7 @@ export default function Industries() {
           {/* Industrial / Medical */}
           <div className="card-dark rounded-2xl p-7">
             <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-copper-500 to-copper-700 shadow-copper-sm mb-5">
-              <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24">
+              <svg aria-hidden="true" className="h-6 w-6" fill="none" viewBox="0 0 24 24">
                 <path
                   d="M9 3h6v6h6v6h-6v6H9v-6H3v-6h6V3z"
                   fill="white"
@@ -306,7 +306,7 @@ export default function Industries() {
           {/* Consumer */}
           <div className="card-dark rounded-2xl p-7">
             <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-copper-500 to-copper-700 shadow-copper-sm mb-5">
-              <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24">
+              <svg aria-hidden="true" className="h-6 w-6" fill="none" viewBox="0 0 24 24">
                 <rect
                   x="6.5"
                   y="2"
