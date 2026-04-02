@@ -22,12 +22,21 @@ export const metadata: Metadata = {
     url: "https://bridgepcb.com",
     siteName: "Bridge PCB",
     type: "website",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Bridge PCB — PCB & PCBA Manufacturing, US-Based Sourcing Agent",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "PCB & PCBA Manufacturing | Bridge PCB — US-Based Sourcing Agent",
     description:
       "US-based PCB & PCBA sourcing agent backed by leading manufacturers in China. 2L–46L, HDI, Flex, Rigid-Flex, PCBA.",
+    images: ["/og-image.png"],
   },
 };
 
