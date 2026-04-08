@@ -47,7 +47,7 @@ export default function ChatWidget() {
       setSubmitted(true);
     } catch {
       setSubmitting(false);
-      alert("Something went wrong — please email sales@bridgepcb.com directly.");
+      alert("Something went wrong — please email info@bridgepcb.com directly.");
     }
   }
 

@@ -30,7 +30,7 @@ export default function Contact() {
       router.push("/thanks");
     } catch {
       setSubmitting(false);
-      alert("Something went wrong — please email sales@bridgepcb.com directly.");
+      alert("Something went wrong — please email info@bridgepcb.com directly.");
     }
   }
 
@@ -168,9 +168,9 @@ export default function Contact() {
                     Prefer email?{" "}
                     <a
                       className="text-copper-400 hover:text-copper-300 underline underline-offset-2 transition-colors"
-                      href="mailto:sales@bridgepcb.com"
+                      href="mailto:info@bridgepcb.com"
                     >
-                      sales@bridgepcb.com
+                      info@bridgepcb.com
                     </a>
                   </div>
                 </div>
